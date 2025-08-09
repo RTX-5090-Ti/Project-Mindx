@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../picture/favicon/favicon.ico"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/admin_Project.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="container">
+      <div id="sidebar"></div>
+      <div class="content">
+        <div class="content-top">
+          <div class="content-top-title">
+            <h3>Projects</h3>
+          </div>
+        </div>
+        <div class="content-bottom">
+          <div class="content-bottom-list">
+            <span class="bottom-list-title">Projects Stats</span>
+            <div class="bottom-list-time">
+              <span>This Week</span>
+              <img
+                src="../picture/admin-dashboard/Arrow - Down 2.png"
+                alt="Arrow"
+              />
+            </div>
+            <div class="bottom-list-chart-1">
+              <canvas class="canvas-1" id="tasksChart"></canvas>
+            </div>
+          </div>
+          <div class="content-bottom-list">
+            <span class="bottom-list-title">Performance</span>
+            <div class="bottom-list-time">
+              <span>This Week</span>
+              <img
+                src="../picture/admin-dashboard/Arrow - Down 2.png"
+                alt="Arrow"
+              />
+            </div>
+            <div class="bottom-list-chart-2">
+              <canvas id="lineChart-1" class="canvas-2"></canvas>
+            </div>
+          </div>
+          <div class="content-bottom-list gird-3">
+            <div class="bottom-list-header">
+              <h3>Ui Developers (39)</h3>
+              <div class="header-views">
+                <div class="header-views-search">
+                  <img
+                    src="../picture/admin-Project/search-normal.png"
+                    alt="search-normal"
+                  />
+                  <input type="text" placeholder="Search for everything..." />
+                </div>
+                <span>View all</span>
+              </div>
+            </div>
+            <div class="bottom-list-imgs">
+              <img src="../picture/admin-Project/Group 1.png" alt="Group" />
+              <img src="../picture/admin-Project/Group 2.png" alt="Group" />
+              <img src="../picture/admin-Project/Group 3.png" alt="Group" />
+              <img src="../picture/admin-Project/Group 4.png" alt="Group" />
+              <img src="../picture/admin-Project/Group 5.png" alt="Group" />
+              <img src="../picture/admin-Project/Group 6.png" alt="Group" />
+              <img src="../picture/admin-Project/Group 7.png" alt="Group" />
+              <img src="../picture/admin-Project/Group 8.png" alt="Group" />
+              <img src="../picture/admin-Project/Group 21.png" alt="Group" />
+              <img src="../picture/admin-Project/Group 22.png" alt="Group" />
+              <img src="../picture/admin-Project/Group 23.png" alt="Group" />
+              <img src="../picture/admin-Project/Group 24.png" alt="Group" />
+              <img src="../picture/admin-Project/Group 25.png" alt="Group" />
+              <img src="../picture/admin-Project/Group 26.png" alt="Group" />
+              <img
+                src="../picture/admin-Project/Group 1000004281.png"
+                alt="Group"
+              />
+              <img
+                src="../picture/admin-Project/Group 1000004282.png"
+                alt="Group"
+              />
+              <img
+                src="../picture/admin-Project/Group 1000004283.png"
+                alt="Group"
+              />
+              <img
+                src="../picture/admin-Project/Group 1000004284.png"
+                alt="Group"
+              />
+              <img
+                src="../picture/admin-Project/Group 1000004285.png"
+                alt="Group"
+              />
+              <img
+                src="../picture/admin-Project/Group 1000004286.png"
+                alt="Group"
+              />
+              <img
+                src="../picture/admin-Project/Group 1000004287.png"
+                alt="Group"
+              />
+            </div>
+            <div class="navigation">
+              <span class="navigation-text">Previous</span>
+              <span class="navigation-number">1</span>
+              <span class="navigation-number">2</span>
+              <span class="navigation-number">3</span>
+              <span class="navigation-text">Next</span>
+            </div>
+          </div>
+          <div class="content-bottom-list gird-4">
+            <div class="bottom-list-view">
+              <h3>Projects</h3>
+              <span>View all</span>
+            </div>
+            <div class="bottom-list-pictures">
+              <div class="pictures-top">
+                <div class="bottom-list-picture">
+                  <img
+                    src="../picture/admin-Project/projects/Imagem.png"
+                    alt="Imagem"
+                  />
+                  <span>Emo stuff</span>
+                </div>
+                <div class="bottom-list-picture">
+                  <img
+                    src="../picture/admin-Project/projects/Imagem (1).png"
+                    alt="Imagem"
+                  />
+                  <span>Tim Burton</span>
+                </div>
+                <div class="bottom-list-picture">
+                  <img
+                    src="../picture/admin-Project/projects/Imagem (2).png"
+                    alt="Imagem"
+                  />
+                  <span>Halloween!</span>
+                </div>
+                <div class="bottom-list-picture">
+                  <img
+                    src="../picture/admin-Project/projects/Imagem (3).png"
+                    alt="Imagem"
+                  />
+                  <span>Spooky Art</span>
+                </div>
+                <div class="bottom-list-picture">
+                  <img
+                    src="../picture/admin-Project/projects/Imagem (4).png"
+                    alt="Imagem"
+                  />
+                  <span>Dark Art</span>
+                </div>
+                <div class="bottom-list-picture">
+                  <img
+                    src="../picture/admin-Project/projects/Imagem (5).png"
+                    alt="Imagem"
+                  />
+                  <span>Gothic art</span>
+                </div>
+              </div>
+              <div class="pictures-bottom">
+                <div class="bottom-list-picture">
+                  <img
+                    src="../picture/admin-Project/projects/Imagem (6).png"
+                    alt="Imagem"
+                  />
+                  <span>- happy :3</span>
+                </div>
+                <div class="bottom-list-picture">
+                  <img
+                    src="../picture/admin-Project/projects/Imagem (7).png"
+                    alt="Imagem"
+                  />
+                  <span>*V4MPYR*</span>
+                </div>
+                <div class="bottom-list-picture">
+                  <img
+                    src="../picture/admin-Project/projects/Imagem (8).png"
+                    alt="Imagem"
+                  />
+                  <span>I <3 Art</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần code Js để  render trang -->
+    <script src="../js/components.js"></script>
+    <script>
+      loadComponent("header", "../components/header.html");
+      loadComponent("sidebar", "../components/sidebar-admin.html");
+    </script>
+    <!-- Link liên kết vs thư viện chart.js để vẽ  chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="../js/admin_Project_chart.js"></script>
+  </body>
+</html>

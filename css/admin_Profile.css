@@ -1,0 +1,222 @@
+@import url(./variables.css);
+@import url(../css/project_admin_profile.css);
+.content-rigth-progress {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+.content {
+  gap: 10px 20px;
+}
+.content-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  grid-column: 3 / 4;
+  grid-row: 1 / 4;
+}
+
+.content-right-profile {
+  background-color: var(--br-cl-content);
+  box-shadow: 0px 3px 35.16px 0px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 24px;
+  flex: 1;
+}
+.profile-link {
+  display: inline-block;
+  font-size: var(--font-s14);
+  font-weight: var(--font-w4);
+  margin-bottom: 8px;
+}
+.profile-job {
+  font-size: var(--font-s26);
+  font-weight: var(--font-w7);
+  margin-bottom: 15px;
+}
+.profile-text {
+  font-size: var(--font-s16);
+  font-weight: var(--font-w4);
+  background-color: #eff3f8;
+  border-radius: 10px;
+  box-shadow: 0px 3px 36px 0px rgba(0, 0, 0, 0.11);
+  padding: 8px;
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px;
+}
+.profile-text::before {
+  content: "";
+  border-width: 10px;
+  border-color: transparent transparent #eff3f8 transparent;
+  border-style: solid;
+  position: absolute;
+  top: -20px;
+  left: 20px;
+}
+.profile-if {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 20px;
+  margin-bottom: 20px;
+}
+.profile-if-work {
+  display: inline-block;
+  font-size: var(--font-s14);
+  font-weight: var(--font-w7);
+}
+.profile-if-view {
+  display: inline-block;
+  font-size: var(--font-s14);
+  font-weight: var(--font-w7);
+  color: #ed2590;
+}
+.profile-lists {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 25px;
+}
+.profile-lists-item {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+.profile-lists-item span {
+  display: inline-block;
+  font-size: var(--font-s14);
+  font-weight: var(--font-w4);
+}
+/* Style lai cho phan mid ( các thẻ input) */
+.content-mid-if {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 40px;
+  column-gap: 35px;
+  /* justify-content: space-between; */
+  /* display: flex;
+  flex-wrap: wrap;
+  gap: 40px; */
+}
+.content-mid-title {
+  font-size: var(--font-s30);
+  font-weight: var(--font-w6);
+  margin-bottom: 45px;
+}
+.if-firstname,
+.if-lastname,
+.if-email,
+.if-number-area,
+.if-number-phone,
+.if-password,
+.if-country,
+.if-position {
+  border-radius: 8px;
+  border: 1px solid var(--nav-cl);
+  padding: 8px 16px;
+}
+.if-firstname,
+.if-lastname,
+.if-email,
+.if-password,
+.if-country,
+.if-position {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  /* width: calc(50% - 40px); */
+}
+.if-firstname label,
+.if-lastname label,
+.if-email label,
+.if-password label,
+.if-country label,
+.if-position label {
+  display: inline-block;
+  font-size: var(--font-s12);
+  font-weight: var(--font-w4);
+  color: var(--cl-label-inp);
+}
+.if-firstname input,
+.if-lastname input,
+.if-email input,
+.if-password input,
+.if-country input,
+.if-position input {
+  display: inline-block;
+  font-size: var(--font-s16);
+  font-weight: var(--font-w4);
+  color: var(--cl-text-inp);
+  border: none;
+  outline: none;
+}
+.if-number {
+  display: flex;
+  gap: 6px;
+  /* justify-content: center;/ */
+  /* align-items: center; */
+  /* justify-content: space-between; */
+}
+.if-number-area {
+  width: calc(50% - 6px);
+  padding: unset;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+}
+.if-number-area span {
+  display: inline-block;
+  font-size: var(--font-s16);
+  font-weight: var(--font-w4);
+  color: var(--cl-text-inp);
+}
+.if-number-phone {
+  padding: unset;
+  padding-left: 15px;
+  width: calc(50% - 6px);
+  flex: 1;
+  display: inline-flex;
+  justify-content: center;
+  /* align-items: center; */
+  flex-direction: column;
+  gap: 8px;
+}
+.if-number-phone label {
+  display: inline-block;
+  font-size: var(--font-s12);
+  font-weight: var(--font-w4);
+  color: var(--cl-label-inp);
+}
+.if-number-phone input {
+  display: inline-block;
+  max-width: 100px;
+  font-size: var(--font-s16);
+  font-weight: var(--font-w4);
+  color: var(--cl-text-inp);
+  border: none;
+  outline: none;
+}
+.content-mid {
+  grid-column: 2 / 3;
+  grid-row: 1 / 4;
+  align-self: self-start;
+  padding-bottom: 70px;
+}
+.content-mid-butt {
+  margin-top: 90px;
+  display: flex;
+  justify-content: center;
+}
+.content-mid-butt button {
+  font-size: var(--font-s20);
+  font-weight: var(--font-w4);
+  color: var(--text-cl-butt);
+  background-color: var(--blue-butt);
+  padding: 17px 45px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}

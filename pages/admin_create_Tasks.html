@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../picture/favicon/favicon.ico"
+    />
+    <link rel="stylesheet" href="../css/admin_create_Tasks.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="container">
+      <div id="sidebar"></div>
+      <div class="content">
+        <div class="content">
+          <div class="content-top">
+            <span>Tasks / Create Tasks</span>
+          </div>
+          <div class="content-bottom">
+            <div class="content-bottom-create">
+              <div class="project-title">
+                <span>Task Title</span>
+                <input type="text" />
+              </div>
+              <div class="project-type">
+                <span>Task Type</span>
+                <input type="text" />
+              </div>
+              <div class="project-times">
+                <div class="project-time-left">
+                  <span> Task Start Date</span>
+                  <div class="projectt-times-start">
+                    <input type="date" />
+                  </div>
+                </div>
+                <div class="project-time-right">
+                  <span> Task Start Date</span>
+                  <div class="projectt-times-end">
+                    <input type="date" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-bottom-Description">
+              <span>Task Description</span>
+              <textarea name="" id=""></textarea>
+            </div>
+            <div class="content-bottom-rules">
+              <span class="rules-title">Assign to</span>
+              <div class="rules-list-and-butt">
+                <div class="rules-list-boxx">
+                  <div class="rules-list">
+                    <div class="rules-list-item">
+                      <span>Yash Ghori</span>
+                      <span id="arrow-icon">&#9650;</span>
+                    </div>
+                    <!-- Tuy chinh lai -->
+                    <div class="rules-list-box" id="list-item">
+                      <div class="rules-list-check">
+                        <div class="rules-list-item-left">
+                          <span class="item-left-name">Yash Ghori</span>
+                        </div>
+                        <!-- <label for="checkbox1" class="checkbox-label">
+                          <input
+                            type="checkbox"
+                            id="checkbox1"
+                            class="check-input"
+                          />
+                          <div class="checkbox">
+                            <img
+                              src="../picture/admin-create-project/Vector3.png"
+                              alt="Vector2"
+                            />
+                          </div>
+                        </label> -->
+                      </div>
+                    </div>
+                    <!-- tuy chinh lai -->
+                  </div>
+                  <div class="rules-listt rules-first">
+                    <div class="rules-listt-item rules-listt-first">
+                      <div class="listt-item-priority">
+                        <span class="item-priority-text"></span>
+                        <img
+                          class="cancel-icon"
+                          src="../picture/admin-create-task/Group 1000004272.png"
+                          alt="Group"
+                        />
+                      </div>
+                      <span id="arrow-priority">&#9650;</span>
+                    </div>
+                    <div class="rules-listt-priority">
+                      <div class="listt-priority-item">Low</div>
+                      <div class="listt-priority-item">High</div>
+                      <div class="listt-priority-item">Medium</div>
+                    </div>
+                    <!--  -->
+                  </div>
+                  <div class="rules-listt rules-second">
+                    <div class="rules-listt-assigning rules-listt-second">
+                      <span>Pending</span>
+                      <!-- <img
+                        src="../picture/admin-create-task/Group 1000004272.png"
+                        alt="Group"
+                      /> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="rules-butt">
+                  <button class="rules-butt-create">Create</button>
+                  <button class="rules-butt-delete">Delete</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần code Js để  render trang -->
+    <script src="../js/components.js"></script>
+    <script>
+      loadComponent("header", "../components/header.html");
+      loadComponent("sidebar", "../components/sidebar-admin.html");
+    </script>
+    <script src="../js/admin_create_Tasks.js"></script>
+  </body>
+</html>

@@ -1,0 +1,180 @@
+@import url(./variables.css);
+body {
+  font-family: var(--font-space-grotesk);
+  color: var(--text-cl);
+  background-color: var();
+  background-color: #262626;
+}
+.main {
+  position: relative;
+  max-width: 1440px;
+  margin: 0 auto;
+  background-color: #f5f5f5;
+  transform: scale(0.75);
+  /* opacity: 90%; */
+  /* border: 1px solid black; */
+}
+.header {
+  padding: 35px 20px;
+  display: flex;
+  align-items: center;
+  gap: 87px;
+  /* margin-bottom: 15px; */
+}
+.header-img {
+  max-width: 763px;
+  flex: 1;
+}
+.header-name {
+  display: flex;
+  align-items: center;
+}
+.header-name-text {
+  font-size: var(--font-s20);
+  font-weight: var(--font-w6);
+  font-family: var(--font-manrope);
+}
+.content {
+  padding-inline: 20px;
+  display: flex;
+  align-items: center;
+  gap: 87px;
+}
+.content-form {
+  flex: 1;
+  max-width: 430px;
+}
+.content-form-h2 {
+  font-size: var(--font-s36);
+  font-weight: var(--font-w8);
+  color: #000000;
+  margin-bottom: 14px;
+}
+.content-form-p {
+  font-size: var(--font-s20);
+  font-weight: var(--font-w4);
+  color: #000000;
+  margin-bottom: 40px;
+}
+.content-fill-email,
+.content-fill-name,
+.content-fill-pass {
+  display: block;
+  width: 100%;
+  padding-block: 11px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #a69999;
+  background-color: inherit;
+  margin-bottom: 30px;
+  font-size: var(--font-s20);
+  font-weight: var(--font-w4);
+  color: #000000;
+}
+.content-fill-email::-webkit-input-placeholder,
+.content-fill-name::-webkit-input-placeholder,
+.content-fill-pass::-webkit-input-placeholder {
+  font-size: var(--font-s20);
+  font-weight: var(--font-w4);
+  color: #000000;
+}
+.content-fill-email::-moz-input-placeholder,
+.content-fill-name::-moz-input-placeholder,
+.content-fill-pass::-moz-input-placeholder {
+  font-size: var(--font-s20);
+  font-weight: var(--font-w4);
+  color: #000000;
+}
+.content-find-box {
+  display: inline-flex;
+  align-items: center;
+}
+.content-find {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 35px;
+}
+.content-find-save {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.content-find-text {
+  display: inline-block;
+  font-size: var(--font-s15);
+  font-weight: var(--font-w4);
+  margin-left: 8px;
+}
+.content-find-forgot {
+  display: inline-block;
+  font-size: var(--font-s15);
+  font-weight: var(--font-w4);
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+.content-login-butt {
+  display: block;
+  color: var(--text-cl-butt);
+  font-size: var(--font-s16);
+  font-weight: var(--font-w7);
+  background-color: #060606;
+  width: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  padding-block: 20px;
+  border-radius: 6px;
+  margin-bottom: 35px;
+}
+.content-text {
+  font-size: var(--font-s16);
+  font-weight: var(--font-w4);
+  text-align: center;
+}
+.content-text-create {
+  display: inline-block;
+  font-weight: var(--font-w5);
+  border-bottom: 1px solid black;
+  cursor: pointer;
+  margin-left: 8px;
+}
+/* Style cho phần Sign up */
+/* .form-signin {
+  display: block;
+} */
+.form-signup {
+  display: none;
+}
+
+/* Form forgot-password */
+.content-form-span {
+  color: var(--blue-butt);
+  cursor: pointer;
+}
+/* .form-signin {
+  display: none;
+} */
+.forgot-pass {
+  display: none;
+}
+/* .pass-reset {
+  display: none;
+} */
+
+.hidden {
+  display: none;
+}
+.show {
+  display: block;
+}
+.load {
+  display: none;
+  width: 100px;
+  aspect-ratio: 1 / 1;
+  /* background-color: red; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

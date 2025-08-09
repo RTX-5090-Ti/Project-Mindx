@@ -1,0 +1,33 @@
+@import url(./variables.css);
+/* Style cho phần sidebar */
+.main-sidebar {
+  max-width: 315px;
+  box-shadow: 0px 3px 35.16px 0px rgba(0, 0, 0, 0.08);
+  /* min-height: calc(100vh - 91px); */
+}
+.main-sidebar {
+  padding: 16px 29px 16px 16px;
+  height: 100%;
+}
+.sidebar-items {
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: background-color 0.2s linear;
+}
+/* Tuỳ  chỉnh khi hover vào */
+.sidebar-items:hover {
+  background-color: #a5c2d1;
+  border-radius: 8px;
+}
+.sidebar-items span {
+  display: block;
+  width: 100%;
+  text-decoration: none;
+  margin-left: 8px;
+  color: var(--nav-cl);
+  font-size: var(--font-s15);
+  font-weight: var(--font-w6);
+  font-family: var(--font-poppins);
+}

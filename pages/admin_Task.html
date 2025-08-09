@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../picture/favicon/favicon.ico"
+    />
+    <link rel="stylesheet" href="../css/admin_Task.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="container">
+      <div id="sidebar"></div>
+      <div class="content">
+        <span class="content-title">Projects / Addodle</span>
+        <div class="content-duration">
+          <!-- khối bên phải -->
+          <div class="duration-left">
+            <h3 class="duration-left-title">Addodle</h3>
+            <div class="duration-left-imgs">
+              <img src="../picture/admin-task/Ellipse 14.png" alt="Ellipse" />
+              <img
+                class="arrow-right"
+                src="../picture/admin-task/🦆 icon _Alternate Long Arrow Right_.png"
+                alt="icon"
+              />
+              <img src="../picture/admin-task/Ellipse 12.png" alt="Ellipse" />
+              <img
+                class="circle-img"
+                src="../picture/admin-task/Ellipse 13.png"
+                alt="Ellipse"
+              />
+              <img
+                class="circle-img"
+                src="../picture/admin-task/Ellipse 14.png"
+                alt="Ellipse"
+              />
+              <img
+                class="circle-img"
+                src="../picture/admin-task/Ellipse 15.png"
+                alt="Ellipse"
+              />
+              <div class="circle">
+                <span class="circle-text">+2</span>
+              </div>
+            </div>
+            <span class="duration-left-status">OnTrack</span>
+          </div>
+          <!-- khối bên trái -->
+          <div class="duration-right">
+            <button class="duration-right-butt">Assign Task</button>
+            <div class="duration-right-spent">
+              <span class="duration-right-spent-text">Time spent</span>
+              <div class="spent-time">
+                <img
+                  src="../picture/admin-task/Group 1000004213.png"
+                  alt="Group"
+                />
+                <span>2M : 0W : 0D</span>
+              </div>
+            </div>
+            <div class="duration-right-deadline">
+              <span class="duration-right-deadline-text">Deadline</span>
+              <div class="deadline-time">
+                <img
+                  src="../picture/admin-task/Group 1000004213.png"
+                  alt="Group"
+                />
+                <span>2M : 0W : 0D</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Phần list bên dưới -->
+        <div class="content-lists">
+          <div class="content-lists-item">
+            <div class="content-lists-item-left">
+              <div class="item-img">
+                <img src="../picture/admin-task/Idea.png" alt="Idea" />
+              </div>
+              <div class="item-title">
+                <p class="item-title-p">
+                  Make an Automatic Payment System that enable the design
+                </p>
+                <div class="item-title-load">
+                  <p class="item-title-load-p">
+                    #402235 Opened 10 days ago by
+                    <span class="p-solid">Yash Ghori</span>
+                  </p>
+                  <div class="item-title-load-status">
+                    <span class="status-cancel">Canceled</span>
+                    <span class="status-complete">Completed</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-lists-item-right">
+              <div class="item-time">
+                <img
+                  src="../picture/admin-task/Group 1000004213.png"
+                  alt="Group"
+                />
+                <span class="item-time-load">00 : 30 : 00</span>
+              </div>
+              <img src="../picture/admin-task/Group 15.png" alt="Group" />
+              <img src="../picture/admin-task/Comments.png" alt="components" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần code Js để  render trang -->
+    <script src="../js/components.js"></script>
+    <script>
+      loadComponent("header", "../components/header.html");
+      loadComponent("sidebar", "../components/sidebar-admin.html");
+    </script>
+    <script src="../js/admin_Task.js"></script>
+  </body>
+</html>

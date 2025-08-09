@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../picture/favicon/favicon.ico"
+    />
+    <link rel="stylesheet" href="../css/user_WorkLog.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="container">
+      <div id="sidebar"></div>
+      <div class="content">
+        <div class="content-worklog">
+          <canvas
+            id="workLogChart"
+            class="content-worklog-chart"
+            width="960"
+            height="700"
+          ></canvas>
+        </div>
+        <!-- Phan ben phai -->
+        <div class="content-right">
+          <!-- Phan total -->
+          <div class="right-total">
+            <div class="right-total-head">
+              <span>Total WorkLog</span>
+              <img
+                src="../picture/user-worklog/🦆 icon _ellipsis_.png"
+                alt="icon"
+              />
+            </div>
+            <div class="right-total-status">
+              <div class="status-circle">
+                <div class="status-circle-small">
+                  <span class="status-circle-small-sta">Statistics</span>
+                  <span class="status-circle-small-time">5w: 2d</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Phan Notifications  -->
+          <div class="right-noti">
+            <div class="right-noti-head">
+              <span class="right-noti-head-title">Notifications</span>
+              <span class="right-noti-head-view">view all</span>
+            </div>
+            <div class="right-noti-list">
+              <div class="list-item">
+                <img
+                  src="../picture/user-worklog/Rectangle 774.png"
+                  alt="Rectangle"
+                />
+                <div class="list-item-if">
+                  <p class="list-item-if-per">Ellie joined team developers</p>
+                  <span class="list-item-if-time"
+                    >04 April, 2021 | 04:00 PM</span
+                  >
+                </div>
+              </div>
+              <div class="list-item">
+                <img
+                  src="../picture/user-worklog/Rectangle 774 (1).png"
+                  alt="Rectangle"
+                />
+                <div class="list-item-if">
+                  <p class="list-item-if-per">Jenny joined team HR</p>
+                  <span class="list-item-if-time"
+                    >04 April, 2021 | 04:00 PM</span
+                  >
+                </div>
+              </div>
+              <div class="list-item">
+                <img
+                  src="../picture/user-worklog/Rectangle 774 (2).png"
+                  alt="Rectangle"
+                />
+                <div class="list-item-if">
+                  <p class="list-item-if-per">Adam got employee of the month</p>
+                  <span class="list-item-if-time"
+                    >03 April, 2021 | 02:00 PM</span
+                  >
+                </div>
+              </div>
+              <div class="list-item">
+                <img
+                  src="../picture/user-worklog/Rectangle 774 (3).png"
+                  alt="Rectangle"
+                />
+                <div class="list-item-if">
+                  <p class="list-item-if-per">Robert joined team design</p>
+                  <span class="list-item-if-time"
+                    >02 April, 2021 | 02:00 PM</span
+                  >
+                </div>
+              </div>
+              <div class="list-item">
+                <img
+                  src="../picture/user-worklog/Rectangle 774 (4).png"
+                  alt="Rectangle"
+                />
+                <div class="list-item-if">
+                  <p class="list-item-if-per">Jack joined team design</p>
+                  <span class="list-item-if-time"
+                    >01 April, 2021 | 03:00 PM</span
+                  >
+                </div>
+              </div>
+              <div class="list-item">
+                <img
+                  src="../picture/user-worklog/Rectangle 774 (4).png"
+                  alt="Rectangle"
+                />
+                <div class="list-item-if">
+                  <p class="list-item-if-per">Jack joined team design</p>
+                  <span class="list-item-if-time"
+                    >01 April, 2021 | 03:00 PM</span
+                  >
+                </div>
+              </div>
+              <div class="list-item">
+                <img
+                  src="../picture/user-worklog/Rectangle 774 (4).png"
+                  alt="Rectangle"
+                />
+                <div class="list-item-if">
+                  <p class="list-item-if-per">Jack joined team design</p>
+                  <span class="list-item-if-time"
+                    >01 April, 2021 | 03:00 PM</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần code Js để  render trang -->
+    <script src="../js/components.js"></script>
+    <script>
+      loadComponent("header", "../components/header.html");
+      loadComponent("sidebar", "../components/sidebar-admin.html");
+    </script>
+    <script src="../js/user_WorkLog.js"></script>
+  </body>
+</html>

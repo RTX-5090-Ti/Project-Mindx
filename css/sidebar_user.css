@@ -1,0 +1,16 @@
+@import url(./variables.css);
+@import url(./sidebar.css);
+.sidebar-items span {
+  display: block;
+  width: 100%;
+  margin-left: 8px;
+  color: var(--nav-cl);
+  font-size: var(--font-s15);
+  font-weight: var(--font-w6);
+  font-family: var(--font-poppins);
+  text-decoration: none;
+}
+.sidebar-items {
+  /* display: block; */
+  text-decoration: none;
+}

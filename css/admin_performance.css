@@ -1,0 +1,130 @@
+@import url(./variables.css);
+
+.container {
+  display: flex;
+  align-items: stretch;
+}
+#sidebar {
+  flex: 0 1 315px;
+}
+.content {
+  font-family: var(--font-open-sans);
+  background-color: var(--primary-cl);
+  color: var(--text-cl);
+  flex: 1;
+  padding: 40px 45px;
+  padding-bottom: 145px;
+}
+.content-chart {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 70px;
+}
+.content-chart-left,
+.content-chart-right {
+  width: calc(50% - 15px);
+  background-color: var(--br-cl-content);
+  border-radius: 42px;
+  box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.16);
+  padding: 21px 32px;
+}
+.chart-left-title,
+.doughnut-title-text {
+  font-size: var(--font-s30);
+  font-family: var(--font-w6);
+  font-family: var(--font-nunito);
+}
+.chart-right-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.doughnut-title-time {
+  background-color: #afd4db;
+  padding: 16px 12px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+}
+.doughnut-title-time span {
+  display: inline-block;
+  font-size: var(--font-s15);
+  font-weight: var(--font-w4);
+  font-family: var(--font-nunito);
+  color: var(--thisweek-cl);
+}
+.chart-line {
+  max-width: 100% !important ;
+  height: 300px !important;
+}
+/* Style  phan list ben duoi */
+.content-status-list {
+  background-color: var(--br-cl-content);
+  border-radius: 20px;
+  padding: 25px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.status-list-tittle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.text-top {
+  font-size: var(--font-s14);
+  font-weight: var(--font-w7);
+  margin-bottom: 5px;
+}
+.text-bot {
+  font-size: var(--font-s12);
+  font-weight: var(--font-w4);
+}
+.text-bot-solid {
+  display: inline-block;
+  font-weight: var(--font-w7);
+}
+.status-list-view {
+  display: inline-flex;
+  align-items: center;
+  gap: 35px;
+}
+.list-view-span {
+  display: inline-block;
+  font-size: var(--font-s16);
+  font-weight: var(--font-w6);
+  font-family: var(--font-inter);
+  color: var(--thisweek-cl);
+  background-color: #4ba6651c;
+  padding: 10px 40px;
+  border-radius: 15px;
+}
+/* Style cho phan chuyen trang */
+.content-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 50px;
+}
+.content-page-text,
+.content-page-number {
+  display: inline-block;
+  font-size: var(--font-s12);
+  font-weight: var(--font-w5);
+  cursor: pointer;
+}
+.content-page-text {
+  color: var(--nav-cl);
+}
+.content-page-number {
+  padding: 8px;
+  border-radius: 8px;
+  background-color: #e0e0e0;
+  /* color: ; */
+}
+.one {
+  color: white;
+  background-color: #0a3b83;
+}

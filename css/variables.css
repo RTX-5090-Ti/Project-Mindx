@@ -1,0 +1,63 @@
+/* Css reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
+/* Tạo biến */
+:root {
+  --font-inter: "Inter", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-nunito: "Nunito", sans-serif;
+  --font-roboto: "Roboto", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-open-sans: "Open Sans", sans-serif;
+  --font-manrope: "Manrope", sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+  --font-s36: 36px;
+  --font-s35: 35px;
+  --font-s30: 30px;
+  --font-s26: 26px;
+  --font-s25: 25px;
+  --font-s24: 24px;
+  --font-s23: 23px;
+  --font-s20: 20px;
+  --font-s18: 18px;
+  --font-s16: 16px;
+  --font-s15: 15px;
+  --font-s14: 14px;
+  --font-s13: 13px;
+  --font-s12: 12px;
+  --font-s10: 10px;
+  --font-w8: 800;
+  --font-w7: 700;
+  --font-w6: 600;
+  --font-w5: 500;
+  --font-w4: 400;
+  --font-w3: 300;
+  --nav-cl: #5d7285;
+  --gray-b4b: #4b4b4b;
+  --text-cl: rgb(14, 32, 64);
+  --thisweek-cl: #238899;
+  --complete-cl: #4ba665;
+  --complete-br-cl: #4ba6651c;
+  --cancael-cl: #a30d11;
+  --cancel-br-cl: #fbe7e8;
+  --blue-butt: #036eff;
+  --primary-cl: #f2f7ff;
+  --secondary-cl: rgb(253, 254, 255);
+  --offtrack-cl: #bd1e1e;
+  --offtrack-br-cl: #c2838333;
+  --focus-cl: #0a3b83;
+  --br-cl-content: white;
+  --text-cl-butt: white;
+  --input-cl: #333333;
+  --cl-label-inp: #5e6366;
+  --cl-text-inp: #abafb1;
+}
+/* Sty chung cho các trang */

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../picture/favicon/favicon.ico"
+    />
+    <link rel="stylesheet" href="../css/admin_performance.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="container">
+      <div id="sidebar"></div>
+      <div class="content">
+        <div class="content-chart">
+          <div class="content-chart-left">
+            <h3 class="chart-left-title">Performance Report</h3>
+            <div class="content-chart-line">
+              <canvas class="chart-line" id="line"></canvas>
+            </div>
+          </div>
+          <div class="content-chart-right">
+            <div class="chart-right-title">
+              <h3 class="doughnut-title-text">Work Log</h3>
+              <div class="doughnut-title-time">
+                <span>This Week</span>
+                <img
+                  src="../picture/admin-performance/Arrow - Down 2.png"
+                  alt="arrow-icon"
+                />
+              </div>
+            </div>
+            <div class="content-chart-doughnut">
+              <canvas class="chart-duoghnut" id="doughnut"></canvas>
+            </div>
+          </div>
+        </div>
+        <div class="content-status">
+          <div class="content-status-list">
+            <!-- Phan ben trai -->
+            <div class="status-list-tittle">
+              <img src="../picture/admin-performance/Idea.png" alt="Idea" />
+              <div class="list-tittle-text">
+                <p class="text-top">
+                  Make an Automatic Payment System that enable the design
+                </p>
+                <p class="text-bot">
+                  #402235 Opened 10 days ago by
+                  <span class="text-bot-solid">Yash Ghori</span>
+                </p>
+              </div>
+            </div>
+            <!-- Phan ben  phai -->
+            <div class="status-list-view">
+              <span class="list-view-span">View</span>
+              <img
+                src="../picture/admin-performance/Group 15.png"
+                alt="Group"
+              />
+              <img
+                src="../picture/admin-performance/Comments.png"
+                alt="components"
+              />
+            </div>
+          </div>
+          <div class="content-status-list">
+            <!-- Phan ben trai -->
+            <div class="status-list-tittle">
+              <img src="../picture/admin-performance/Idea.png" alt="Idea" />
+              <div class="list-tittle-text">
+                <p class="text-top">
+                  Make an Automatic Payment System that enable the design
+                </p>
+                <p class="text-bot">
+                  #402235 Opened 10 days ago by
+                  <span class="text-bot-solid">Yash Ghori</span>
+                </p>
+              </div>
+            </div>
+            <!-- Phan ben  phai -->
+            <div class="status-list-view">
+              <span class="list-view-span">View</span>
+              <img
+                src="../picture/admin-performance/Group 15.png"
+                alt="Group"
+              />
+              <img
+                src="../picture/admin-performance/Comments.png"
+                alt="components"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="content-page">
+          <span class="content-page-text">Previous</span>
+          <span class="content-page-number one">1</span>
+          <span class="content-page-number">2</span>
+          <span class="content-page-number">3</span>
+          <span class="content-page-text">Next</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần code Js để  render trang -->
+    <script src="../js/components.js"></script>
+    <script>
+      loadComponent("header", "../components/header.html");
+      loadComponent("sidebar", "../components/sidebar-admin.html");
+    </script>
+    <!-- Link liên kết vs thư viện chart.js để vẽ  chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="../js/admin_performance.js"></script>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../picture/favicon/favicon.ico"
+    />
+
+    <link rel="stylesheet" href="../css/admin_add_SubTasks.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="container">
+      <div id="sidebar"></div>
+      <div class="content">
+        <div class="content">
+          <div class="content-top">
+            <span>Tasks / Create Tasks</span>
+          </div>
+          <div class="content-bottom">
+            <div class="content-bottom-create">
+              <div class="project-title">
+                <span>Task Title</span>
+                <input type="text" />
+              </div>
+              <div class="project-type">
+                <span>Task Type</span>
+                <input type="text" />
+              </div>
+              <div class="project-times">
+                <div class="project-time-left">
+                  <span> Task Start Date</span>
+                  <div class="projectt-times-start">
+                    <input type="date" />
+                  </div>
+                </div>
+                <div class="project-time-right">
+                  <span> Task Start Date</span>
+                  <div class="projectt-times-end">
+                    <input type="date" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="content-bottom-Description">
+              <span>Task Description</span>
+              <textarea name="" id=""></textarea>
+            </div>
+            <div class="content-bottom-rules">
+              <div class="rules-object">
+                <!-- Phần Reporter -->
+                <div class="rules-object-reporter">
+                  <span class="rules-object-reporter-text">Reporter</span>
+                  <div class="reporter-list">
+                    <div class="reporter-list-item">
+                      <span>Team Lead</span>
+                      <span id="arrow-reporter">&#9650;</span>
+                    </div>
+                    <!-- <div class="reporter-list-check">
+                      <div class="reporter-list-check-span">
+                        <span class="check-name">Yash</span>
+                        <span class="check-position">Team lead</span>
+                      </div>
+                      <label for="checkbox-reporter-1" class="checkbox-label">
+                        <input
+                          type="checkbox"
+                          id="checkbox-reporter-1"
+                          class="check-input"
+                        />
+                        <div class="checkbox">
+                          <img
+                            src="../picture/admin-create-project/Vector3.png"
+                            alt="Vector2"
+                          />
+                        </div>
+                      </label>
+                    </div> -->
+                  </div>
+                </div>
+                <!-- Phần Assignee -->
+                <div class="rules-object-assignee">
+                  <span class="rules-object-assignee-text">Assignee</span>
+                  <div class="assignee-list">
+                    <div class="assignee-list-item">
+                      <span>Team Lead</span>
+                      <span id="arrow-assignee">&#9650;</span>
+                    </div>
+                    <!-- <div class="assignee-list-check">
+                      <div class="assignee-list-check-span">
+                        <span class="check-name">Yash</span>
+                        <span class="check-position">Team lead</span>
+                      </div>
+                      <label for="checkbox-assignee-1" class="checkbox-label">
+                        <input
+                          type="checkbox"
+                          id="checkbox-assignee-1"
+                          class="check-input"
+                        />
+                        <div class="checkbox">
+                          <img
+                            src="../picture/admin-create-project/Vector3.png"
+                            alt="Vector2"
+                          />
+                        </div>
+                      </label>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+              <!-- Phần button -->
+              <div class="rules-object-button">
+                <button class="object-button-add">Add Attachment</button>
+                <div class="object-button-initialize">
+                  <button class="object-button-initialize-create">
+                    Create
+                  </button>
+                  <button class="object-button-initialize-delete">
+                    Delete
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần code Js để  render trang -->
+    <script src="../js/components.js"></script>
+    <script>
+      loadComponent("header", "../components/header.html");
+      loadComponent("sidebar", "../components/sidebar-admin.html");
+    </script>
+    <script src="../js/admin_add_SubTasks.js"></script>
+  </body>
+</html>

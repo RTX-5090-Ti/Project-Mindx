@@ -1,0 +1,87 @@
+@import url(./variables.css);
+
+/* Style cho phần header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-block: 11px;
+  padding-right: 35px;
+  box-shadow: 0px 3px 35.16px 0px rgba(0, 0, 0, 0.08);
+}
+/* Style cho phần AProjeat0 */
+.header-left {
+  padding: 12px 24px;
+  display: flex;
+  align-items: end;
+}
+.header-left span {
+  display: inline-block;
+  margin-left: 19px;
+  font-family: var(--font-inter);
+  font-size: var(--font-s25);
+  font-weight: var(--font-w6s);
+  color: #0b3051;
+}
+/* Stylle cho phần header bên phải */
+.header-right {
+  display: flex;
+  max-width: 750px;
+  gap: 40px;
+  flex: 1;
+}
+/* Style cho ô search */
+.header-right-search {
+  padding: 12px 16.8px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #9a93b3;
+  border-radius: 6px;
+  flex-grow: 1;
+}
+/* Style cho ô search khi click  chuột vào */
+.header-right-search:has(input:focus) {
+  border: 1px solid #1e628a;
+  border-radius: 6px;
+  transition: all 0.2s linear;
+}
+.header-right-search input {
+  display: inline-block;
+  flex: 1;
+  margin-left: 16px;
+  font-family: var(--font-inter);
+  font-size: var(--font-s14);
+  font-weight: var(--font-w4);
+  border: none;
+  outline: none;
+}
+/* Canh giữa cái chuông */
+.header-right-bell {
+  align-self: center;
+}
+/* Style cho phần account */
+.header-right-account {
+  display: flex;
+  gap: 22px;
+  align-items: center;
+}
+.account-if {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 3px;
+}
+.account-if span:first-child {
+  display: inline-block;
+  font-family: var(--font-inter);
+  font-size: var(--font-s16);
+  font-weight: var(--font-w4);
+  color: #0d062d;
+}
+.account-if span:last-child {
+  display: inline-block;
+  font-family: var(--font-inter);
+  font-size: var(--font-s14);
+  font-weight: var(--font-w4);
+  color: #787486;
+}

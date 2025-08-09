@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../picture/favicon/favicon.ico"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/admin_dashboard.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="container">
+      <div id="sidebar"></div>
+      <div class="content">
+        <div class="content-top">
+          <div class="content-top-title">
+            <h3>Dashboard</h3>
+          </div>
+          <div class="content-top-icon">
+            <img src="../picture/admin-dashboard/Vector.png" alt="Vector" />
+          </div>
+        </div>
+        <div class="content-bottom">
+          <div class="content-bottom-list">
+            <div class="bottom-list-title">
+              <span class="bottom-list-title-text">Projects</span>
+              <div class="bottom-list-title-icon">
+                <img
+                  src="../picture/admin-dashboard/Group 628.png"
+                  alt="Group"
+                />
+                <span>52 files</span>
+              </div>
+            </div>
+            <div class="bottom-list-picture">
+              <img src="../picture/admin-dashboard/Mask Group.png" alt="Mask" />
+            </div>
+          </div>
+          <div class="content-bottom-list">
+            <span class="bottom-list-text">Tasks</span>
+            <div class="bottom-list-time">
+              <span>This Week</span>
+              <img
+                src="../picture/admin-dashboard/Arrow - Down 2.png"
+                alt="Arrow"
+              />
+            </div>
+            <div class="bottom-list-chart-1">
+              <canvas class="canvas-1" id="tasksChart"></canvas>
+            </div>
+          </div>
+          <div class="content-bottom-list">
+            <span class="bottom-list-text">Work Log</span>
+            <div class="bottom-list-time">
+              <span>This Week</span>
+              <img
+                src="../picture/admin-dashboard/Arrow - Down 2.png"
+                alt="Arrow"
+              />
+            </div>
+            <div class="bottom-list-chart-2">
+              <canvas id="doughnutChart" class="canvas-2"></canvas>
+            </div>
+          </div>
+          <div class="content-bottom-list">
+            <span class="bottom-list-text">Performance</span>
+            <div class="bottom-list-time">
+              <span>This Week</span>
+              <img
+                src="../picture/admin-dashboard/Arrow - Down 2.png"
+                alt="Arrow"
+              />
+            </div>
+            <div class="bottom-list-chart-3">
+              <canvas id="lineChart" class="canvas-3"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần code Js để  render trang -->
+    <script src="../js/components.js"></script>
+    <script>
+      loadComponent("header", "../components/header.html");
+      loadComponent("sidebar", "../components/sidebar-admin.html");
+    </script>
+    <!-- Link liên kết vs thư viện chart.js để vẽ  chart -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+    <script src="../js/admin_dashboard_chart.js"></script>
+  </body>
+</html>

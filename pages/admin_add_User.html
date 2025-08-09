@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../picture/favicon/favicon.ico"
+    />
+    <link rel="stylesheet" href="../css/admin_add_User.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="container">
+      <div id="sidebar"></div>
+      <div class="content">
+        <h3 class="content-title">Add User</h3>
+        <div class="content-if">
+          <div class="if-case1">
+            <div class="case1-firstname">
+              <label for="firstname">First name</label>
+              <input type="text" name="" id="firstname" />
+            </div>
+            <div class="case1-phone">
+              <label for="Phone">Phone No.</label>
+              <input type="tel" name="" id="phone" />
+            </div>
+            <div class="case1-position">
+              <div class="case1-position-job">
+                <label for="job">Designation</label>
+                <input type="text" name="" id="job" />
+              </div>
+              <div class="case1-position-file">
+                <label for="file">Department</label>
+                <input type="text" name="" id="file" />
+              </div>
+            </div>
+          </div>
+          <div class="if-case2">
+            <div class="case2-lastname">
+              <label for="lastname">Last name</label>
+              <input type="text" name="" id="lastname" />
+            </div>
+            <div class="case2-date">
+              <label for="datte">Created Date</label>
+              <input type="date" name="" id="date" />
+            </div>
+            <div class="case2-person">
+              <label for="person">Created Date</label>
+              <input type="text" name="" id="person" />
+            </div>
+          </div>
+          <div class="if-case3">
+            <div class="case3-box">
+              <div class="case3-br">
+                <img src="../picture/admin-add-user/Foto.png" alt="Foto" />
+              </div>
+              <span class="case3-br-upload">Upload Photo</span>
+            </div>
+          </div>
+        </div>
+        <div class="content-butt">
+          <button class="content-butt-add">Add User</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần code Js để  render trang -->
+    <script src="../js/components.js"></script>
+    <script>
+      loadComponent("header", "../components/header.html");
+      loadComponent("sidebar", "../components/sidebar-admin.html");
+    </script>
+  </body>
+</html>

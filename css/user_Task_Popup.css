@@ -1,0 +1,206 @@
+@import url(./variables.css);
+/* @import url(./user_Task.css); */
+/* #content {
+  flex: 1;
+} */
+.main-page {
+  position: relative;
+}
+.container {
+  /* opacity: 50%; */
+  /* cursor: unset; */
+}
+
+span {
+  display: inline-block;
+}
+.content-popup {
+  display: none;
+  pointer-events: auto;
+  position: absolute;
+  top: calc(35px + 91px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 920px;
+  /* height: 400px; */
+  background-color: var(--br-cl-content);
+  border-radius: 8px;
+  box-shadow: 0px 3px 35.16px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-nunito);
+  color: inherit;
+  padding: 25px 40px 40px 40px;
+}
+.popup-way {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+.cancle-icon {
+  cursor: pointer;
+}
+.popup-way-p {
+  color: var(--cl-text-inp);
+  font-size: var(--font-s13);
+  font-weight: var(--font-w7);
+  /* color: #9095a0; */
+}
+.popup-titlle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+.popup-titlle-text {
+  font-size: var(--font-s26);
+  font-weight: var(--font-w7);
+}
+.popup-title-times {
+  border-radius: 12px;
+  padding: 0px 0 0px 15px;
+  background-color: var(--complete-br-cl);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+.box-circle {
+  padding: 5px;
+  border-radius: 100%;
+  background-color: #d5edd5;
+}
+.fa-play {
+  color: var(--complete-cl);
+}
+.popup-title-time {
+  font-size: var(--font-s20);
+  font-weight: var(--font-w6);
+  color: var(--cl-text-inp);
+}
+.popup-if {
+  max-width: 320px;
+  /* background-color: #d5edd5; */
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 23px;
+}
+.popup-if-priority-left,
+.popup-if-status-left,
+.popup-if-date-left,
+.popup-if-assigne-left,
+.popup-if-owner-left {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+}
+.popup-if-priority-left span,
+.popup-if-status-left span,
+.popup-if-date-left span,
+.popup-if-assigne-left span,
+.popup-if-owner-left span {
+  font-size: var(--font-s14);
+  font-weight: var(--font-w6);
+  color: var(--cl-text-inp);
+}
+.popup-if-priority-right,
+.popup-if-status-right {
+  padding-block: 8px;
+  width: 105px;
+  text-align: center;
+  color: white;
+  border-radius: 22px;
+}
+.popup-if-priority-right {
+  background-color: #f06a6a;
+}
+.popup-if-status-right {
+  background-color: var(--complete-cl);
+}
+.popup-if-priority,
+.popup-if-stattus,
+.popup-if-owner,
+.popup-if-assigne,
+.popup-if-date {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.popup-if-owner-right-text,
+.popup-if-assigne-right-text,
+.popup-if-date-right {
+  font-size: var(--font-s14);
+  font-weight: var(--font-w4);
+}
+.popup-if-assigne-right,
+.popup-if-owner-right {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+.popup-line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--cl-text-inp);
+  margin-bottom: 20px;
+}
+.popup-attch {
+  font-size: var(--font-s14);
+  font-weight: var(--font-w7);
+  margin-bottom: 25px;
+}
+.popup-link,
+.popup-add {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.popup-link {
+  margin-bottom: 10px;
+}
+.popup-add {
+  margin-bottom: 30px;
+}
+.popup-link-text {
+  font-size: var(--font-s14);
+  font-weight: var(--font-w4);
+  color: #0974c6;
+  cursor: pointer;
+}
+.popup-add-text {
+  font-size: var(--font-s14);
+  font-weight: var(--font-w4);
+}
+.popup-description-title {
+  font-size: var(--font-s14);
+  font-weight: var(--font-w7);
+  margin-bottom: 25px;
+}
+.popup-description-text {
+  font-size: var(--font-s14);
+  font-weight: var(--font-w5);
+  margin-bottom: 40px;
+}
+.line-three {
+  margin-bottom: 50px;
+}
+.popup-butt {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.popup-butt-text {
+  padding: 8px 12px;
+  background-color: #f3f4f6;
+  border-radius: 4px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.11);
+}
+.popup-butt-text {
+  flex: 1;
+  /* cursor: pointer; */
+}
+.popup-butt-text span {
+  font-size: var(--font-s12);
+  font-weight: var(--font-w4);
+}
+/*  */
