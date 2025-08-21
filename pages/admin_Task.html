@@ -52,7 +52,11 @@
           </div>
           <!-- khối bên trái -->
           <div class="duration-right">
-            <button class="duration-right-butt">Assign Task</button>
+            <a
+              href="../pages/admin_create_Tasks.html"
+              class="duration-right-butt"
+              >Assign Task</a
+            >
             <div class="duration-right-spent">
               <span class="duration-right-spent-text">Time spent</span>
               <div class="spent-time">
@@ -60,7 +64,7 @@
                   src="../picture/admin-task/Group 1000004213.png"
                   alt="Group"
                 />
-                <span>2M : 0W : 0D</span>
+                <span class="spent-time-spent">2M : 0W : 0D</span>
               </div>
             </div>
             <div class="duration-right-deadline">
@@ -70,7 +74,7 @@
                   src="../picture/admin-task/Group 1000004213.png"
                   alt="Group"
                 />
-                <span>2M : 0W : 0D</span>
+                <span class="deadline-time-dead">2M : 0W : 0D</span>
               </div>
             </div>
           </div>
@@ -78,7 +82,8 @@
         <!-- Phần list bên dưới -->
         <div class="content-lists">
           <div class="content-lists-item">
-            <div class="content-lists-item-left">
+            <!-- Phần thể <a> -->
+            <a href="#" class="content-lists-item-left">
               <div class="item-img">
                 <img src="../picture/admin-task/Idea.png" alt="Idea" />
               </div>
@@ -93,21 +98,39 @@
                   </p>
                   <div class="item-title-load-status">
                     <span class="status-cancel">Canceled</span>
-                    <span class="status-complete">Completed</span>
+                    <span class="status-complete">in-progress</span>
+                    <span class="status-pending">Pending</span>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="content-lists-item-right">
-              <div class="item-time">
+            </a>
+            <!--Phần bên phải của time  -->
+            <div class="content-lists-item-right right-button">
+              <div class="content-lists-item-right">
+                <div class="item-time">
+                  <img
+                    src="../picture/admin-task/Group 1000004213.png"
+                    alt="Group"
+                  />
+                  <span class="item-time-load">00 : 30 : 00</span>
+                </div>
+                <img src="../picture/admin-task/Group 15.png" alt="Group" />
                 <img
-                  src="../picture/admin-task/Group 1000004213.png"
+                  src="../picture/admin-task/Comments.png"
+                  alt="components"
+                />
+              </div>
+              <div class="edit-box">
+                <img
+                  class="edit-button"
+                  src="../picture/admin-task/Group 1000004325.png"
                   alt="Group"
                 />
-                <span class="item-time-load">00 : 30 : 00</span>
+                <div class="edit-layout">
+                  <span class="layout-butt-edit">Edit</span>
+                  <a href="" class="layout-butt-delete">Delete</a>
+                </div>
               </div>
-              <img src="../picture/admin-task/Group 15.png" alt="Group" />
-              <img src="../picture/admin-task/Comments.png" alt="components" />
             </div>
           </div>
         </div>
@@ -121,5 +144,22 @@
       loadComponent("sidebar", "../components/sidebar-admin.html");
     </script>
     <script src="../js/admin_Task.js"></script>
+    <script>
+      // Hàm gán tên
+      function setHeaderUserName() {
+        const me = JSON.parse(localStorage.getItem("currentUser") || "{}");
+        const el = document.querySelector("#header .account-if-name");
+        if (el) el.textContent = me.name || "User";
+      }
+
+      (async () => {
+        await Promise.all([
+          loadComponent("header", "../components/header.html"),
+          loadComponent("sidebar", "../components/sidebar-admin.html"),
+        ]);
+        // Lúc này header/sidebar đã vào DOM
+        setHeaderUserName();
+      })();
+    </script>
   </body>
 </html>

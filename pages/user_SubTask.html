@@ -12,16 +12,18 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="header"></div>
+    <div id="header-user"></div>
     <div class="container">
-      <div id="sidebar"></div>
+      <div id="siderbar"></div>
       <div class="content">
         <div class="content-title">
           <span class="content-title-task"
             >Task / Make an Automatic Payment System that enable the
             design</span
           >
-          <button class="content-title-butt">Assign Sub task</button>
+          <a href="./user_add_SubTasks.html" class="content-title-butt"
+            >Assign Sub task</a
+          >
         </div>
         <div class="content-list">
           <div class="content-list-main">
@@ -30,17 +32,17 @@
                 <img src="../picture/admin-subtask/Idea.png" alt="Idea" />
               </div>
               <div class="main-left-content">
-                <p class="main-left-content-text">
+                <p class="main-left-content-text des-task">
                   Make an Automatic Payment System that enable the design
                 </p>
                 <div class="main-left-status">
-                  <p class="main-left-status-text">
+                  <p class="main-left-status-text status-task">
                     #402235 Opened 10 days ago by
                     <span class="main-left-status-text-solid">Yash Ghori</span>
                   </p>
                   <div class="status-load">
-                    <span class="status-load-complete">complete</span>
-                    <span class="status-load-low">Low</span>
+                    <span class="status-load-complete">In-progress</span>
+                    <span class="status-load-low status-prioty">Low</span>
                   </div>
                 </div>
               </div>
@@ -51,7 +53,7 @@
                   src="../picture/admin-subtask/material-symbols_clock-loader-10.png"
                   alt="material-symbols_clock-loader-10"
                 />
-                <span>00 : 30 : 00</span>
+                <span class="main-right-time-deadline">00 : 30 : 00</span>
               </div>
               <div class="main-right-img">
                 <img src="../picture/admin-subtask/Group 15.png" alt="Group" />
@@ -65,6 +67,7 @@
             </div>
           </div>
           <div class="content-list-sub">
+            <!--  -->
             <div class="content-list-main list-sub-item">
               <div class="main-left">
                 <div class="main-leftf-img">
@@ -155,6 +158,7 @@
                 </div>
               </div>
             </div>
+            <!--  -->
           </div>
         </div>
       </div>
@@ -163,8 +167,26 @@
     <!-- Phần code Js để  render trang -->
     <script src="../js/components.js"></script>
     <script>
-      loadComponent("header", "../components/header.html");
-      loadComponent("sidebar", "../components/sidebar-admin.html");
+      loadComponent("header-user", "../components/header_user.html");
+      loadComponent("siderbar", "../components/sidebar_user.html");
+    </script>
+    <script src="../js/user_Subtask.js"></script>
+    <script>
+      // Hàm gán tên
+      function setHeaderUserName() {
+        const me = JSON.parse(localStorage.getItem("currentUser") || "{}");
+        const el = document.querySelector("#header-user .account-if-name");
+        if (el) el.textContent = me.name || "User";
+      }
+
+      (async () => {
+        await Promise.all([
+          loadComponent("header-user", "../components/header_user.html"),
+          loadComponent("siderbar", "../components/sidebar_user.html"),
+        ]);
+        // Lúc này header/sidebar đã vào DOM
+        setHeaderUserName();
+      })();
     </script>
   </body>
 </html>

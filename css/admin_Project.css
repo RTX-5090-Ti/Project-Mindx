@@ -15,9 +15,26 @@
   background-color: var(--primary-cl);
 }
 .content-top-title {
+  margin-bottom: 31px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.content-top-title h3 {
   font-size: var(--font-s30);
   font-weight: var(--font-w6);
-  margin-bottom: 31px;
+}
+.content-top-title-butt {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: var(--font-s18);
+  font-weight: var(--font-w5);
+  padding: 18px 30px;
+  border-radius: 15px;
+  font-family: var(--font-inter);
+  color: var(--text-cl-butt);
+  background-color: var(--blue-butt);
 }
 .content-bottom {
   display: grid;

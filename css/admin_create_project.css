@@ -118,6 +118,11 @@
   font-size: var(--font-s18);
   font-weight: var(--font-w6);
 }
+.rules-list-item-left {
+  width: 60%;
+  display: flex;
+  justify-content: space-between;
+}
 #arrow-black {
   display: inline-block;
   cursor: pointer;
@@ -146,8 +151,10 @@
   color: var(--text-cl-butt);
   background-color: var(--blue-butt);
   margin-right: 28px;
+  text-decoration: none;
 }
 .rules-butt-delete {
+  text-decoration: none;
   background-color: #eef4fb;
   color: var(--blue-butt);
 }

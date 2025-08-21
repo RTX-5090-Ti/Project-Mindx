@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../picture/favicon/favicon.ico"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/admin_edit_Project.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="container">
+      <div id="sidebar"></div>
+      <div class="content">
+        <div class="content-top">
+          <span>Projects / Edit Project</span>
+        </div>
+        <div class="content-bottom">
+          <div class="content-bottom-create">
+            <div class="project-title">
+              <span>Project Title</span>
+              <input id="project-title-input" type="text" />
+            </div>
+            <div class="project-type">
+              <span>Project Type</span>
+              <input id="project-type-input" type="text" />
+            </div>
+            <div class="project-times">
+              <div class="project-time-left">
+                <span>Start Date</span>
+                <div class="projectt-times-start">
+                  <input id="project-times-start-input" type="date" />
+                </div>
+              </div>
+              <div class="project-time-right">
+                <span>End Date</span>
+                <div class="projectt-times-end">
+                  <input id="project-times-end-input" type="date" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-bottom-Description">
+            <span>Project Description</span>
+            <textarea name="" id="description-input"></textarea>
+          </div>
+          <div class="content-bottom-rules">
+            <span class="rules-title">Project Roles</span>
+            <div class="rules-list-and-butt">
+              <div class="rules-list">
+                <div class="rules-list-item">
+                  <span>Team Lead</span>
+                  <span id="arrow-black">&#9650;</span>
+                </div>
+                <div class="rules-list-box" id="lists">
+                  <!--  -->
+                  <!-- <div class="rules-list-check">
+                    <div class="rules-list-item-left">
+                      <span class="item-left-name">Yash</span>
+                      <span class="item-left-position">Team lead</span>
+                    </div>
+                    <label for="checkbox1" class="checkbox-label">
+                      <input
+                        type="radio"
+                        name="yash"
+                        id="checkbox1"
+                        class="check-input"
+                      />
+                      <div class="checkbox">
+                        <img
+                          src="../picture/admin-create-project/Vector3.png"
+                          alt="Vector2"
+                        />
+                      </div>
+                    </label>
+                  </div> -->
+                  <!--  -->
+                </div>
+              </div>
+              <div class="rules-butt">
+                <a
+                  href="../pages/admin_all_project.html"
+                  class="rules-butt-create"
+                  >Save</a
+                >
+                <a
+                  href="../pages/admin_all_project.html"
+                  class="rules-butt-delete"
+                  >Delete</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần code Js để  render trang -->
+    <script src="../js/components.js"></script>
+    <script>
+      loadComponent("header", "../components/header.html");
+      loadComponent("sidebar", "../components/sidebar-admin.html");
+    </script>
+    <script src="../js/admin_edit_project.js"></script>
+    <script>
+      // Hàm gán tên
+      function setHeaderUserName() {
+        const me = JSON.parse(localStorage.getItem("currentUser") || "{}");
+        const el = document.querySelector("#header .account-if-name");
+        if (el) el.textContent = me.name || "User";
+      }
+
+      (async () => {
+        await Promise.all([
+          loadComponent("header", "../components/header.html"),
+          loadComponent("sidebar", "../components/sidebar-admin.html"),
+        ]);
+        // Lúc này header/sidebar đã vào DOM
+        setHeaderUserName();
+      })();
+    </script>
+  </body>
+</html>

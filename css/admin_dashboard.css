@@ -6,6 +6,10 @@
 #sidebar {
   flex: 0 1 315px;
 }
+#siderbar {
+  flex: 0 1 315px;
+}
+
 .content {
   font-family: var(--font-nunito);
   background-color: var(--primary-cl);

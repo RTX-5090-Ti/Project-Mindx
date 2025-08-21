@@ -3,16 +3,27 @@ body {
   font-family: var(--font-space-grotesk);
   color: var(--text-cl);
   background-color: var();
-  background-color: #262626;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 .main {
+  flex: 1;
   position: relative;
   max-width: 1440px;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   background-color: #f5f5f5;
+  border-radius: 20px;
+  /* box-shadow: 0px 3px 35px 0px rgba(0, 0, 0, 0.08); */
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15),
+    /* bóng tối nhẹ bên dưới */ 0px 4px 10px rgba(0, 0, 0, 0.08);
   transform: scale(0.75);
-  /* opacity: 90%; */
-  /* border: 1px solid black; */
+  margin-top: -80px;
+  /* transition: all 0.2s linear; */
+}
+.main:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2), 0px 6px 15px rgba(0, 0, 0, 0.1);
 }
 .header {
   padding: 35px 20px;

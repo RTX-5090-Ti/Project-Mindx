@@ -1,0 +1,8 @@
+@import url(./variables.css);
+@import url(../css/admin_Task.css);
+.content-title {
+  font-size: var(--font-s26);
+  font-weight: var(--font-w6);
+  color: var(--text-cl);
+  margin-bottom: 40px;
+}

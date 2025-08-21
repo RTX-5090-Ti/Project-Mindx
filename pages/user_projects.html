@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../picture/favicon/favicon.ico"
+    />
+    <link rel="stylesheet" href="../css/admin_all_project.css" />
+    <link rel="stylesheet" href="../css/user_project.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="header-user"></div>
+    <div class="container">
+      <div id="siderbar"></div>
+      <div class="content">
+        <div class="content-top">
+          <h3 class="content-top-h3">Projects</h3>
+          <!-- <a href="../pages/admin_create_Project.html" class="content-top-butt"
+            >Create</a
+          > -->
+        </div>
+        <div class="content-bottom">
+          <!--  -->
+          <div class="content-bottom-listt">
+            <div class="list-title">
+              <div class="list-title-left">
+                <span class="list-title-left-name">Adoddle</span>
+                <!-- <a
+                  href="../pages/admin_edit_Project.html"
+                  class="list-title-left-butt"
+                >
+                  <img
+                    src="../picture/admin-all-project/Group 1000004288.png"
+                    alt="Group"
+                  />
+                </a> -->
+              </div>
+              <div class="list-title-right">
+                <span>Offtrack</span>
+              </div>
+            </div>
+            <!--  -->
+            <a href="#" class="list-title-box">
+              <div class="list-paragraph">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo
+                  dolore aspernatur eligendi suscipit. Eos, facilis, illo
+                  voluptate velit, earum molestias dignissimos deleniti amet
+                  minima aliquid qui aspernatur nesciunt. Animi, illum.
+                </p>
+              </div>
+              <div class="list-title-box-item">
+                <div class="list-time">
+                  <img
+                    src="../picture/admin-all-project/🦆 icon _Hourglass End_.png"
+                    alt="Hourglass"
+                  />
+                  <span class="list-time-start">05 APRIL 2023</span>
+                </div>
+                <div class="list-issues">
+                  <img
+                    src="../picture/admin-all-project/Group 642.png"
+                    alt="Group"
+                  />
+                  <div class="list-issues-item">
+                    <img
+                      src="../picture/admin-all-project/Group 628.png"
+                      alt="Group"
+                    />
+                    <span>14 issues</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <!--  -->
+        </div>
+        <div class="navigation">
+          <span class="navigation-text">Previous</span>
+          <span class="navigation-number one">1</span>
+          <span class="navigation-number">2</span>
+          <span class="navigation-number">3</span>
+          <span class="navigation-text">Next</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần code Js để  render trang -->
+    <script src="../js/components.js"></script>
+    <script>
+      loadComponent("header-user", "../components/header_user.html");
+      loadComponent("siderbar", "../components/sidebar_user.html");
+    </script>
+    <script src="../js/user_project.js"></script>
+    <script>
+      // Hàm gán tên
+      function setHeaderUserName() {
+        const me = JSON.parse(localStorage.getItem("currentUser") || "{}");
+        const el = document.querySelector("#header-user .account-if-name");
+        if (el) el.textContent = me.name || "User";
+      }
+
+      (async () => {
+        await Promise.all([
+          loadComponent("header-user", "../components/header_user.html"),
+          loadComponent("siderbar", "../components/sidebar_user.html"),
+        ]);
+        // Lúc này header/sidebar đã vào DOM
+        setHeaderUserName();
+      })();
+    </script>
+  </body>
+</html>

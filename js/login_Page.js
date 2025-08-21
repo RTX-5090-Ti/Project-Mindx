@@ -25,6 +25,8 @@ function signUp(event) {
     name: nameUp,
     email: emailUp,
     password: passWordUp,
+    job: "",
+    phone: "",
   };
   if (nameUp && emailUp && passWordUp) {
     if (!nameUp && !emailUp && !passWordUp) {
@@ -57,16 +59,20 @@ const loginButton = document.getElementById("login-butt");
 
 const adminAcount = [
   {
-    name: "YashGhori",
+    name: "Yash Ghori",
     email: "YashGhori@gmail.com",
     password: "123456",
     role: "admin",
+    phone: "7048144030",
+    job: "UI - Intern",
   },
   {
-    name: "Vuong",
+    name: "Ven KenShin",
     email: "vuong@gmail.com",
     password: "123",
     role: "admin",
+    phone: "7047129842",
+    job: "UX - Intern",
   },
 ];
 
@@ -108,7 +114,7 @@ const checkStaff = () => {
     // lưu người đăng nhập
     localStorage.setItem("currentUser", JSON.stringify(num));
     setTimeout(() => {
-      window.location.href = "./pages/admin_SubTask.html"; //Thay đổi link tại đây
+      window.location.href = "./pages/user_dashboard.html"; //Thay đổi link tại đây
     }, 2000);
     loadIcon.style.display = "block";
     background.style.opacity = "80%";

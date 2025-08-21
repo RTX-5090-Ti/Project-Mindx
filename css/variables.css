@@ -59,5 +59,11 @@ img {
   --input-cl: #333333;
   --cl-label-inp: #5e6366;
   --cl-text-inp: #abafb1;
+  --hover-cl: #e6f0ff;
+  --pending-cl: #b58900;
+  --pending-br: #fff8e1;
+  --loading-low-cl: #1e3a8a;
+  --loading-low-br: #dbeafe;
 }
 /* Sty chung cho các trang */
+/* #e6f0ff */

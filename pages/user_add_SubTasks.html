@@ -13,42 +13,46 @@
     <title>Document</title>
   </head>
   <body>
-    <div id="header"></div>
+    <div id="header-user"></div>
     <div class="container">
-      <div id="sidebar"></div>
+      <div id="siderbar"></div>
       <div class="content">
         <div class="content">
           <div class="content-top">
-            <span>Tasks / Create Tasks</span>
+            <span>SubTasks / Create SubTasks</span>
           </div>
           <div class="content-bottom">
             <div class="content-bottom-create">
               <div class="project-title">
-                <span>Task Title</span>
-                <input type="text" />
+                <span>SubTask Title</span>
+                <input class="project-title-input" type="text" />
               </div>
               <div class="project-type">
-                <span>Task Type</span>
-                <input type="text" />
+                <span>SubTask Type</span>
+                <input class="project-type-input" type="text" />
               </div>
               <div class="project-times">
                 <div class="project-time-left">
-                  <span> Task Start Date</span>
+                  <span>Start Date</span>
                   <div class="projectt-times-start">
-                    <input type="date" />
+                    <input class="projectt-times-start-input" type="date" />
                   </div>
                 </div>
                 <div class="project-time-right">
-                  <span> Task Start Date</span>
+                  <span>Start Date</span>
                   <div class="projectt-times-end">
-                    <input type="date" />
+                    <input class="projectt-times-end-input" type="date" />
                   </div>
                 </div>
               </div>
             </div>
             <div class="content-bottom-Description">
-              <span>Task Description</span>
-              <textarea name="" id=""></textarea>
+              <span>SubTask Description</span>
+              <textarea
+                class="content-bottom-Description-input"
+                name=""
+                id=""
+              ></textarea>
             </div>
             <div class="content-bottom-rules">
               <div class="rules-object">
@@ -57,28 +61,15 @@
                   <span class="rules-object-reporter-text">Reporter</span>
                   <div class="reporter-list">
                     <div class="reporter-list-item">
-                      <span>Team Lead</span>
+                      <span class="reporter-list-item-name"></span>
                       <span id="arrow-reporter">&#9650;</span>
                     </div>
+                    <!--  -->
                     <!-- <div class="reporter-list-check">
-                      <div class="reporter-list-check-span">
-                        <span class="check-name">Yash</span>
-                        <span class="check-position">Team lead</span>
-                      </div>
-                      <label for="checkbox-reporter-1" class="checkbox-label">
-                        <input
-                          type="checkbox"
-                          id="checkbox-reporter-1"
-                          class="check-input"
-                        />
-                        <div class="checkbox">
-                          <img
-                            src="../picture/admin-create-project/Vector3.png"
-                            alt="Vector2"
-                          />
-                        </div>
-                      </label>
+                      <span class="check-name">Yash</span>
+                      <span class="check-position">Team lead</span>
                     </div> -->
+                    <!--  -->
                   </div>
                 </div>
                 <!-- Phần Assignee -->
@@ -86,27 +77,12 @@
                   <span class="rules-object-assignee-text">Assignee</span>
                   <div class="assignee-list">
                     <div class="assignee-list-item">
-                      <span>Team Lead</span>
+                      <span class="assignee-list-item-name"></span>
                       <span id="arrow-assignee">&#9650;</span>
                     </div>
                     <!-- <div class="assignee-list-check">
-                      <div class="assignee-list-check-span">
-                        <span class="check-name">Yash</span>
-                        <span class="check-position">Team lead</span>
-                      </div>
-                      <label for="checkbox-assignee-1" class="checkbox-label">
-                        <input
-                          type="checkbox"
-                          id="checkbox-assignee-1"
-                          class="check-input"
-                        />
-                        <div class="checkbox">
-                          <img
-                            src="../picture/admin-create-project/Vector3.png"
-                            alt="Vector2"
-                          />
-                        </div>
-                      </label>
+                      <span class="check-name">Yash</span>
+                      <span class="check-position">Team lead</span>
                     </div> -->
                   </div>
                 </div>
@@ -115,12 +91,18 @@
               <div class="rules-object-button">
                 <button class="object-button-add">Add Attachment</button>
                 <div class="object-button-initialize">
-                  <button class="object-button-initialize-create">
+                  <a
+                    href="./user_SubTask.html"
+                    class="object-button-initialize-create"
+                  >
                     Create
-                  </button>
-                  <button class="object-button-initialize-delete">
-                    Delete
-                  </button>
+                  </a>
+                  <a
+                    href="./user_SubTask.html"
+                    class="object-button-initialize-delete"
+                  >
+                    Cancel
+                  </a>
                 </div>
               </div>
             </div>
@@ -132,9 +114,26 @@
     <!-- Phần code Js để  render trang -->
     <script src="../js/components.js"></script>
     <script>
-      loadComponent("header", "../components/header.html");
-      loadComponent("sidebar", "../components/sidebar-admin.html");
+      loadComponent("header-user", "../components/header_user.html");
+      loadComponent("siderbar", "../components/sidebar_user.html");
     </script>
-    <script src="../js/admin_add_SubTasks.js"></script>
+    <script src="../js/user_add_SubTasks.js"></script>
+    <script>
+      // Hàm gán tên
+      function setHeaderUserName() {
+        const me = JSON.parse(localStorage.getItem("currentUser") || "{}");
+        const el = document.querySelector("#header-user .account-if-name");
+        if (el) el.textContent = me.name || "User";
+      }
+
+      (async () => {
+        await Promise.all([
+          loadComponent("header-user", "../components/header_user.html"),
+          loadComponent("siderbar", "../components/sidebar_user.html"),
+        ]);
+        // Lúc này header/sidebar đã vào DOM
+        setHeaderUserName();
+      })();
+    </script>
   </body>
 </html>

@@ -17,53 +17,71 @@
       <div id="sidebar"></div>
       <div class="content">
         <div class="content-left">
-          <div class="left-avatar">
-            <img src="../picture/project-admin-profile/Foto.png" alt="Foto" />
-          </div>
-          <div class="left-if">
-            <p class="left-if-name">Yash Ghori</p>
-            <p class="left-if-city">Ahmedabad, Gujarat</p>
-            <p class="left-if-country">India</p>
-          </div>
-          <div class="left-line"></div>
-          <div class="left-box">
-            <div class="left-position">
-              <div class="left-position-img">
-                <img
-                  src="../picture/project-admin-profile/Vector.png"
-                  alt="Vector"
-                />
+          <div class="content-left-box">
+            <div class="left-avatar">
+              <img src="../picture/project-admin-profile/Foto.png" alt="Foto" />
+            </div>
+            <div class="left-if">
+              <p class="left-if-name"></p>
+              <p class="left-if-city">Ahmedabad, Gujarat</p>
+              <p class="left-if-country">India</p>
+            </div>
+            <div class="left-line"></div>
+            <div class="left-box">
+              <div class="left-position">
+                <div class="left-position-img">
+                  <img
+                    src="../picture/project-admin-profile/Vector.png"
+                    alt="Vector"
+                  />
+                </div>
+                <span class="left-position-text text"></span>
               </div>
-              <span class="text">UI - Intern</span>
+              <div class="left-funtion">
+                <img
+                  src="../picture/project-admin-profile/block.png"
+                  alt="block"
+                />
+                <span class="text">on-teak</span>
+              </div>
             </div>
-            <div class="left-funtion">
+            <div class="left-line"></div>
+            <div class="left-box">
+              <div class="left-number">
+                <img src="../picture/project-admin-profile/add.png" alt="add" />
+                <span class="left-number-text text"></span>
+              </div>
+              <div class="left-email">
+                <img
+                  src="../picture/project-admin-profile/scraps.png"
+                  alt="scraps"
+                />
+                <span class="left-email-text text"></span>
+              </div>
+              <div class="left-picture">
+                <img
+                  src="../picture/project-admin-profile/gallery.png"
+                  alt="gallery"
+                />
+                <span class="text">PDT - I</span>
+              </div>
+            </div>
+            <div class="left-butt">
               <img
-                src="../picture/project-admin-profile/block.png"
-                alt="block"
+                class="left-butt-edit"
+                src="../picture/favicon/edit.gif"
+                alt="edit"
               />
-              <span class="text">on-teak</span>
             </div>
           </div>
-          <div class="left-line"></div>
-          <div class="left-box">
-            <div class="left-number">
-              <img src="../picture/project-admin-profile/add.png" alt="add" />
-              <span class="text">+91 7048144030</span>
-            </div>
-            <div class="left-email">
-              <img
-                src="../picture/project-admin-profile/scraps.png"
-                alt="scraps"
-              />
-              <span class="text">yghori@asite.com</span>
-            </div>
-            <div class="left-picture">
-              <img
-                src="../picture/project-admin-profile/gallery.png"
-                alt="gallery"
-              />
-              <span class="text">PDT - I</span>
-            </div>
+          <!--Log-out butt  -->
+          <div class="log-out">
+            <span class="log-out-text">Logout</span>
+            <img
+              class="log-out-item"
+              src="../picture/favicon/logout.gif"
+              alt="logout"
+            />
           </div>
         </div>
         <!--Phan Mid -->
@@ -177,7 +195,43 @@
           </div>
         </div>
       </div>
+      <!-- Phần sữa thông tin admin -->
+      <div class="create">
+        <div class="create-exit">
+          <img
+            class="create-exit-icon"
+            src="../picture/mange-user/🦆 icon _x letter_.png"
+            alt="icon"
+          />
+        </div>
+        <h2 class="create-title">Add Staff</h2>
+        <form action="" class="create-form">
+          <div class="crate-form-list">
+            <label for="">Name</label>
+            <input class="create-form-name-input" type="text" />
+          </div>
+          <div class="crate-form-list">
+            <label for="">Email</label>
+            <input class="create-form-email-input" type="email" />
+          </div>
+          <div class="crate-form-list">
+            <label for="">Job</label>
+            <input class="create-form-job-input" type="text" />
+          </div>
+          <div class="crate-form-list">
+            <label for="">Phone</label>
+            <input class="create-form-phone-input" type="tel" />
+          </div>
+        </form>
+        <div class="create-butt">
+          <a href="#" class="create-butt-save">Save</a>
+          <!-- <span class="create-butt-cancel">Cancel</span> -->
+        </div>
+      </div>
+      <!--  -->
+      <!-- load -->
     </div>
+    <img class="load" src="../picture/favicon/loading.gif" alt="load" />
 
     <!-- Phần code Js để  render trang -->
     <script src="../js/components.js"></script>
@@ -188,5 +242,22 @@
     <!-- đường dẫn thư viên chart.js -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
     <script src="../js/project_admin_profile.js"></script>
+    <script>
+      // Hàm gán tên
+      function setHeaderUserName() {
+        const me = JSON.parse(localStorage.getItem("currentUser") || "{}");
+        const el = document.querySelector("#header .account-if-name");
+        if (el) el.textContent = me.name || "User";
+      }
+
+      (async () => {
+        await Promise.all([
+          loadComponent("header", "../components/header.html"),
+          loadComponent("sidebar", "../components/sidebar-admin.html"),
+        ]);
+        // Lúc này header/sidebar đã vào DOM
+        setHeaderUserName();
+      })();
+    </script>
   </body>
 </html>

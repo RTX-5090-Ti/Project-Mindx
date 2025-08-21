@@ -6,6 +6,10 @@
 #sidebar {
   flex: 0 1 315px;
 }
+#siderbar {
+  flex: 0 1 315px;
+}
+
 .content {
   font-family: var(--font-montserrat);
   color: var(--text-cl);
@@ -35,6 +39,7 @@
   color: #9a93b3;
 }
 .content-title-butt {
+  text-decoration: none;
   display: inline-block;
   font-size: var(--font-s18);
   font-weight: var(--font-w5);
@@ -92,6 +97,21 @@
 }
 .status-load-low {
   padding: 5px 30px;
+}
+.loading-low {
+  padding: 5px 30px;
+  color: var(--loading-low-cl);
+  background-color: var(--loading-low-br);
+}
+.loading-medium {
+  padding: 5px 20px;
+  color: var(--complete-cl);
+  background-color: var(--complete-br-cl);
+}
+.loading-high {
+  padding: 5px 30px;
+  color: var(--cancael-cl);
+  background-color: var(--cancel-br-cl);
 }
 .main-right {
   display: inline-flex;

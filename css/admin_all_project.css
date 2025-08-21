@@ -6,6 +6,9 @@
 #sidebar {
   flex: 0 1 315px;
 }
+#siderbar {
+  flex: 0 1 315px;
+}
 .content {
   font-family: var(--font-inter);
   background-color: var(--primary-cl);
@@ -13,6 +16,7 @@
   flex: 1;
   padding: 24px 56px;
   padding-bottom: 145px;
+  min-height: calc(100vh - 91px);
 }
 .content-top {
   display: flex;
@@ -20,12 +24,14 @@
   align-items: center;
   margin-bottom: 40px;
 }
-.content-top h3 {
+.content-top-h3 {
   font-family: var(--font-poppins);
   font-size: var(--font-s30);
   font-weight: var(--font-w6);
 }
-.content-top button {
+.content-top-butt {
+  text-decoration: none;
+  display: inline-block;
   color: var(--primary-cl);
   font-size: var(--font-s18);
   font-weight: var(--font-w5);
@@ -38,14 +44,19 @@
 /* styl cho phần list */
 .content-bottom {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 50px 34px;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 .content-bottom-list {
   padding: 20px 18px 8px 18px;
   background-color: var(--br-cl-content);
   border-radius: 16px;
+  height: 100%;
+}
+.content-bottom-list:hover {
+  background-color: #e6f0ff;
 }
 .list-title {
   display: flex;
@@ -66,6 +77,15 @@
   display: flex;
   align-items: flex-start;
 }
+.list-title-left-butt {
+  /* cursor: pointer; */
+  transition: all 0.2s linear;
+}
+.list-title-left-butt:hover {
+  padding: 3px;
+  border: 2px solid var(--input-cl);
+  border-radius: 8px;
+}
 .list-title-left span {
   margin-right: 12px;
   display: inline-block;
@@ -78,7 +98,20 @@
   border-radius: 4px;
   background-color: var(--offtrack-br-cl);
 }
-
+.list-title-box {
+  text-decoration: none;
+  min-height: 209px;
+  /* height: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  /* align-items: flex-end; */
+}
+.list-title-box-item {
+  /* flex: 1; */
+  /* justify-items: flex-end; */
+}
 .list-title-right span {
   display: inline-block;
   font-size: var(--font-s12);
@@ -91,6 +124,7 @@
 .list-paragraph p {
   font-size: var(--font-s13);
   font-weight: var(--font-w5);
+  color: var(--text-cl);
   line-height: 21px;
 }
 .list-time {
@@ -146,4 +180,8 @@
   background-color: #e0e0e0;
   border-radius: 8px;
   padding: 8px 9px;
+}
+.one {
+  background-color: var(--focus-cl);
+  color: white;
 }

@@ -24,30 +24,34 @@
             <div class="content-bottom-create">
               <div class="project-title">
                 <span>Task Title</span>
-                <input type="text" />
+                <input class="project-title-input" type="text" />
               </div>
               <div class="project-type">
                 <span>Task Type</span>
-                <input type="text" />
+                <input class="project-type-input" type="text" />
               </div>
               <div class="project-times">
                 <div class="project-time-left">
                   <span> Task Start Date</span>
                   <div class="projectt-times-start">
-                    <input type="date" />
+                    <input class="projectt-times-start-input" type="date" />
                   </div>
                 </div>
                 <div class="project-time-right">
-                  <span> Task Start Date</span>
+                  <span> Task End Date</span>
                   <div class="projectt-times-end">
-                    <input type="date" />
+                    <input class="projectt-times-end-input" type="date" />
                   </div>
                 </div>
               </div>
             </div>
             <div class="content-bottom-Description">
               <span>Task Description</span>
-              <textarea name="" id=""></textarea>
+              <textarea
+                class="content-bottom-Description-input"
+                name=""
+                id=""
+              ></textarea>
             </div>
             <div class="content-bottom-rules">
               <span class="rules-title">Assign to</span>
@@ -55,29 +59,17 @@
                 <div class="rules-list-boxx">
                   <div class="rules-list">
                     <div class="rules-list-item">
-                      <span>Yash Ghori</span>
+                      <span class="rules-list-item-assign"></span>
                       <span id="arrow-icon">&#9650;</span>
                     </div>
                     <!-- Tuy chinh lai -->
                     <div class="rules-list-box" id="list-item">
-                      <div class="rules-list-check">
-                        <div class="rules-list-item-left">
-                          <span class="item-left-name">Yash Ghori</span>
-                        </div>
-                        <!-- <label for="checkbox1" class="checkbox-label">
-                          <input
-                            type="checkbox"
-                            id="checkbox1"
-                            class="check-input"
-                          />
-                          <div class="checkbox">
-                            <img
-                              src="../picture/admin-create-project/Vector3.png"
-                              alt="Vector2"
-                            />
-                          </div>
-                        </label> -->
-                      </div>
+                      <!-- <div class="rules-list-check">
+                        <span class="item-left-name">Yash Ghori</span>
+                      </div> -->
+                      <!-- <div class="rules-list-check">
+                        <span class="item-left-name">Yash Ghori</span>
+                      </div> -->
                     </div>
                     <!-- tuy chinh lai -->
                   </div>
@@ -100,19 +92,23 @@
                     </div>
                     <!--  -->
                   </div>
-                  <div class="rules-listt rules-second">
+                  <!-- <div class="rules-listt rules-second">
                     <div class="rules-listt-assigning rules-listt-second">
                       <span>Pending</span>
-                      <!-- <img
+                      <img
                         src="../picture/admin-create-task/Group 1000004272.png"
                         alt="Group"
-                      /> -->
+                      />
                     </div>
-                  </div>
+                  </div> -->
                 </div>
                 <div class="rules-butt">
-                  <button class="rules-butt-create">Create</button>
-                  <button class="rules-butt-delete">Delete</button>
+                  <a href="../pages/admin_Task.html" class="rules-butt-create"
+                    >Create</a
+                  >
+                  <a href="../pages/admin_Task.html" class="rules-butt-delete"
+                    >Cancel</a
+                  >
                 </div>
               </div>
             </div>
@@ -128,5 +124,22 @@
       loadComponent("sidebar", "../components/sidebar-admin.html");
     </script>
     <script src="../js/admin_create_Tasks.js"></script>
+    <script>
+      // Hàm gán tên
+      function setHeaderUserName() {
+        const me = JSON.parse(localStorage.getItem("currentUser") || "{}");
+        const el = document.querySelector("#header .account-if-name");
+        if (el) el.textContent = me.name || "User";
+      }
+
+      (async () => {
+        await Promise.all([
+          loadComponent("header", "../components/header.html"),
+          loadComponent("sidebar", "../components/sidebar-admin.html"),
+        ]);
+        // Lúc này header/sidebar đã vào DOM
+        setHeaderUserName();
+      })();
+    </script>
   </body>
 </html>

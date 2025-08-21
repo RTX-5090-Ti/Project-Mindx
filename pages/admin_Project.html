@@ -31,6 +31,11 @@
         <div class="content-top">
           <div class="content-top-title">
             <h3>Projects</h3>
+            <a
+              href="../pages/admin_all_project.html"
+              class="content-top-title-butt"
+              >All projects</a
+            >
           </div>
         </div>
         <div class="content-bottom">
@@ -215,5 +220,22 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
     <script src="../js/admin_Project_chart.js"></script>
+    <script>
+      // Hàm gán tên
+      function setHeaderUserName() {
+        const me = JSON.parse(localStorage.getItem("currentUser") || "{}");
+        const el = document.querySelector("#header .account-if-name");
+        if (el) el.textContent = me.name || "User";
+      }
+
+      (async () => {
+        await Promise.all([
+          loadComponent("header", "../components/header.html"),
+          loadComponent("sidebar", "../components/sidebar-admin.html"),
+        ]);
+        // Lúc này header/sidebar đã vào DOM
+        setHeaderUserName();
+      })();
+    </script>
   </body>
 </html>

@@ -6,6 +6,10 @@
 #sidebar {
   flex: 0 1 315px;
 }
+#siderbar {
+  flex: 0 1 315px;
+}
+
 .content {
   font-family: var(--font-roboto);
   color: var(--text-cl);
@@ -17,14 +21,30 @@
   grid-template-columns: 1fr 2.075fr 1.379fr;
   grid-template-rows: 1fr;
   gap: 27px;
+  /* align-items: start; */
+  position: relative;
 }
 /* Style chho phần khung của avatar */
 .content-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* padding: 24px;
+  background-color: var(--secondary-cl);
+  border-radius: 20px;
+  box-shadow: 0px 3px 35.16px 0px rgba(0, 0, 0, 0.08); */
+  /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+  /* display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px; */
+  /* align-self: start; */
+}
+.content-left-box {
   padding: 24px;
   background-color: var(--secondary-cl);
   border-radius: 20px;
   box-shadow: 0px 3px 35.16px 0px rgba(0, 0, 0, 0.08);
-  /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -75,6 +95,15 @@
   flex-direction: column;
   gap: 24px;
   justify-content: center;
+}
+.left-butt {
+}
+.left-butt-edit:hover {
+  transform: translateY(-2px);
+}
+.left-butt-edit {
+  width: 30px;
+  cursor: pointer;
 }
 /* Style cho phần  UI Devaloper mid*/
 .content-mid {
@@ -259,20 +288,117 @@
   font-weight: var(--font-w7);
   font-family: var(--font-inter);
 }
-/* .progress-chart-circle::before {
-  content: "";
+/* Log  out button */
+.log-out {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 auto;
+  border-radius: 8px;
+  background-color: #fcfeff;
+  border: 2px solid #ff4d4f;
+  padding: 3px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  text-decoration: none;
+}
+.log-out:hover {
+  transform: translateY(-2px);
+  /* box-shadow: 0 6px 6px rgb(255, 77, 79, 0.5); */
+  box-shadow: 0 6px 14px rgba(255, 77, 79, 0.4); /* tạo bóng nổi */
+}
+.log-out-item {
+  width: 30px;
+  aspect-ratio: 1 / 1;
+}
+.log-out-text {
+  color: var(--text-cl);
+  font-size: 18px;
+  font-weight: var(--font-w5);
+  font-family: var(--font-inter);
+}
+
+.load {
+  display: none;
   position: absolute;
-  inset: 0; 
-  border-radius: 50%;
-  background: conic-gradient(rgb(107, 114, 128) 0% 60%, #00a2fa 60% 100%);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: red; */
+  width: 100px;
+  aspect-ratio: 1 / 1;
+  border-radius: 100%;
+}
+/* Phần layout edit thông tin admin */
+a {
+  text-decoration: none;
+}
+.create {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  width: 40%;
+  background-color: var(--br-cl-content);
+  border-radius: 12px;
+  box-shadow: 0px 3px 35.16px 0px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  /* opacity: 50%; */
+}
+.create-exit {
+  display: flex;
+  justify-content: end;
+}
+.create-exit-icon {
   cursor: pointer;
 }
-.progress-chart-circle::after {
-  content: "";
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  background: #fff;
-  z-index: 1;
-} */
+.create-title {
+  font-size: var(--font-s24);
+  font-weight: var(--font-w6);
+  color: var(--text-cl);
+  font-family: var(--font-poppins);
+  text-align: center;
+  margin-bottom: 20px;
+}
+.crate-form-list {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+.crate-form-list label {
+  font-size: var(--font-s20);
+  font-weight: var(--font-w6);
+  color: var(--text-cl);
+  font-family: var(--font-open-sans);
+}
+.crate-form-list input {
+  padding: 10px 15px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid #dddddd;
+  font-size: var(--font-s18);
+  font-weight: var(--font-w5);
+  color: var(--text-cl);
+}
+.create-butt {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+.create-butt-save,
+.create-butt-cancel {
+  font-size: var(--font-s18);
+  font-weight: var(--font-w5);
+  font-family: var(--font-inter);
+
+  cursor: pointer;
+  border-radius: 18px;
+}
+.create-butt-save {
+  color: var(--text-cl-butt);
+  background-color: var(--blue-butt);
+  border: 1px solid var(--blue-butt);
+  padding: 15px 30px;
+}

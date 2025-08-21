@@ -9,6 +9,7 @@
 .container {
   /* opacity: 50%; */
   /* cursor: unset; */
+  min-height: calc(100vh + 91px);
 }
 
 span {
@@ -18,7 +19,8 @@ span {
   display: none;
   pointer-events: auto;
   position: absolute;
-  top: calc(35px + 91px);
+  /* top: calc(35px + 91px); */
+  top: 91px;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;

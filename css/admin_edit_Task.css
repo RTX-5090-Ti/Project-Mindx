@@ -1,0 +1,153 @@
+@import url(./variables.css);
+@import url(./admin_create_project.css);
+.container {
+  display: flex;
+  align-items: stretch;
+}
+#sidebar {
+  flex: 0 1 315px;
+}
+.content {
+  font-family: var(--font-open-sans);
+  color: var(--text-cl);
+  flex: 1 0 0px;
+  padding: 40px 30px;
+  padding-bottom: 75px;
+  background-color: var(--primary-cl);
+}
+#arrow-icon {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+}
+.arrow {
+  transform: rotate(180deg);
+}
+.rules-list-boxx {
+  flex: 1;
+}
+/* style cho phần Priority, Task Assigning */
+.rules-list-boxx {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+.rules-listt {
+  border: 1px solid var(--nav-cl);
+  border-radius: 12px;
+  max-width: 170px;
+  padding: 7px;
+  flex: 1;
+}
+.rules-listt-first {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: unset; */
+  padding-bottom: 5px;
+}
+#arrow-priority {
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.2s linear;
+}
+.cancel-icon {
+  display: none;
+}
+.arrow-icon-priority {
+  transform: rotate(180deg);
+}
+.rules-list {
+  /* flex: 1; */
+  max-width: 270px;
+}
+.listt-item-priority {
+  display: inline-flex;
+  /* visibility: hidden; */
+  align-items: center;
+  gap: 10px;
+  border-radius: 22px;
+  background-color: var(--cancel-br-cl);
+  padding: 10px 30px;
+}
+.listt-item-priority span {
+  display: inline-block;
+  color: var(--cancael-cl);
+}
+.listt-item-priority img {
+  cursor: pointer;
+}
+/* Phan listt-assigning */
+.rules-listt-assigning {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 22px;
+  background-color: var(--cancel-br-cl);
+  padding: 10px 20px;
+}
+.rules-listt-assigning span {
+  display: inline-block;
+  color: var(--cancael-cl);
+}
+.rules-listt-assigning img {
+  cursor: pointer;
+}
+/* Tao Before va After */
+.rules-first {
+  position: relative;
+}
+.rules-first::after {
+  content: "Priority";
+  font-size: var(--font-s23);
+  font-weight: var(--font-w6);
+  font-family: var(--font-open-sans);
+  position: absolute;
+  top: -35px;
+  left: 0;
+}
+.rules-second {
+  position: relative;
+}
+.rules-second::after {
+  content: "Task Assigning";
+  text-wrap: nowrap;
+  font-size: var(--font-s23);
+  font-weight: var(--font-w6);
+  font-family: var(--font-open-sans);
+  position: absolute;
+  top: -35px;
+  left: 0;
+}
+.rules-listt-priority {
+  display: none;
+  margin-top: 5px;
+}
+.listt-priority-item {
+  font-size: var(--font-s18);
+  font-weight: var(--font-w4);
+  font-family: var(--font-open-sans);
+  padding: 10px;
+  border-radius: 15px;
+  gap: 5px;
+  cursor: pointer;
+}
+.listt-priority-item:hover {
+  background-color: #d9d9d9;
+}
+.rules-list-check {
+  border-bottom: unset;
+  padding: 5px 0px;
+}
+.item-left-name {
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 15px;
+  gap: 5px;
+  border-bottom: unset;
+}
+.item-left-name:hover {
+  background-color: #d9d9d9;
+}

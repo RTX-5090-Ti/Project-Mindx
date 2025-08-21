@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../picture/favicon/favicon.ico"
+    />
+    <link rel="stylesheet" href="../css/manage_ User.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="header"></div>
+    <div class="container">
+      <div id="sidebar"></div>
+      <div class="content">
+        <div class="content-top">
+          <h2 class="content-title">Account staff</h2>
+          <span class="content-top-butt">Add Staff</span>
+        </div>
+        <div class="content-acc">
+          <table class="content-acc-table">
+            <!--  -->
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>
+                  <div>
+                    <img src="../picture/mange-user/scraps.png" alt="email" />
+                    <span>Email</span>
+                  </div>
+                </th>
+                <th>
+                  <div>
+                    <img src="../picture/mange-user/Vector.png" alt="Vector" />
+                    <span>Job title</span>
+                  </div>
+                </th>
+                <th>
+                  <div>
+                    <img src="../picture/mange-user/scraps.png" alt="scraps" />
+                    <span>Phone number</span>
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <!--  -->
+            <tbody class="list-body">
+              <tr class="task-item">
+                <td class="task-item-name">Yash Ghori</td>
+                <td>yghori@asite.com</td>
+                <td>UI - Intern</td>
+                <td>
+                  <div class="item-phone">
+                    <span class="item-phone-text">
+                      <img
+                        class="item-nodate"
+                        src="../picture/favicon/no-data.gif"
+                        alt=""
+                    /></span>
+                    <a href="">
+                      <img
+                        class="cancle-icon"
+                        src="../picture/favicon/letter-x.gif"
+                        alt="letter-x"
+                      />
+                    </a>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+            <!--  -->
+          </table>
+        </div>
+      </div>
+      <div class="create">
+        <div class="create-exit">
+          <img
+            class="create-exit-icon"
+            src="../picture/mange-user/🦆 icon _x letter_.png"
+            alt="icon"
+          />
+        </div>
+        <h2 class="create-title">Add Staff</h2>
+        <form action="" class="create-form">
+          <div class="crate-form-list">
+            <label for="">Name</label>
+            <input class="create-form-name-input" type="text" />
+          </div>
+          <div class="crate-form-list">
+            <label for="">Email</label>
+            <input class="create-form-email-input" type="email" />
+          </div>
+          <div class="crate-form-list">
+            <label for="">Job</label>
+            <input class="create-form-job-input" type="text" />
+          </div>
+        </form>
+        <div class="create-butt">
+          <a href="../pages/manage_User.html" class="create-butt-save">Save</a>
+          <!-- <span class="create-butt-cancel">Cancel</span> -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Phần code Js để  render trang -->
+    <script src="../js/components.js"></script>
+    <script>
+      loadComponent("header", "../components/header.html");
+      loadComponent("sidebar", "../components/sidebar-admin.html");
+    </script>
+    <script src="../js/manage_User.js"></script>
+    <script>
+      // Hàm gán tên
+      function setHeaderUserName() {
+        const me = JSON.parse(localStorage.getItem("currentUser") || "{}");
+        const el = document.querySelector("#header .account-if-name");
+        if (el) el.textContent = me.name || "User";
+      }
+
+      (async () => {
+        await Promise.all([
+          loadComponent("header", "../components/header.html"),
+          loadComponent("sidebar", "../components/sidebar-admin.html"),
+        ]);
+        // Lúc này header/sidebar đã vào DOM
+        setHeaderUserName();
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+#siderbar {
+  flex: 0 1 315px;
+}
+.content-bottom-listt {
+  padding: 20px 18px 8px 18px;
+  background-color: var(--br-cl-content);
+  border-radius: 16px;
+  height: 100%;
+}
+.list-title-box {
+  cursor: unset;
+}

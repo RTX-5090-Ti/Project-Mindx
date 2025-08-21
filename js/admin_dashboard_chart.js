@@ -152,3 +152,14 @@ const lineChart = new Chart(ctxxx, {
     },
   },
 });
+
+// Hiện tên người đăng nhập
+
+// const nameAccCount = document.querySelector(".account-if-name");
+// let currentName = localStorage.getItem("currentName");
+// console.log(currentName);
+// if (currentName) {
+//   nameAccCount.textContent = currentName;
+// }
+
+// nameAccCount.innerText = currentName;

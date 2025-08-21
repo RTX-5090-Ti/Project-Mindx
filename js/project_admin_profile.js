@@ -102,44 +102,86 @@ listPicture2.innerHTML = items2
 //   `;
 // });
 
-// Phần vẽ chart
-const ctx = document.getElementById("progressChart").getContext("2d");
-
-const progressChart = new Chart(ctx, {
-  type: "doughnut",
-  data: {
-    datasets: [
-      {
-        data: [60, 40], // 40% tiến độ, 60% còn lại
-        backgroundColor: ["#757575", "#03A9F4"], // xám + xanh
-        borderWidth: 0,
-      },
-    ],
-  },
-  options: {
-    responsive: false, // giữ cố định 195px
-    cutout: "80%", // lỗ rỗng to hơn (80% radius)
-    plugins: {
-      legend: { display: false },
-      tooltip: { enabled: false },
-    },
-  },
-  plugins: [
-    {
-      id: "centerText",
-      afterDraw(chart) {
-        const {
-          ctx,
-          chartArea: { width, height },
-        } = chart;
-        ctx.save();
-        ctx.font = "bold 20px sans-serif";
-        ctx.fillStyle = "#263238";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.fillText("5w: 2d", width / 2, height / 2);
-        ctx.restore();
-      },
-    },
-  ],
+// Click button log-out
+const loadItem = document.querySelector(".load");
+const backGround = document.querySelector(".container");
+const buttLogOut = document.querySelector(".log-out");
+buttLogOut.addEventListener("click", () => {
+  setTimeout(() => {
+    window.location.href = "../index.html";
+  }, 2000);
+  loadItem.style.display = "block";
+  backGround.style.opacity = "20%";
 });
+// Edit profile admin
+const editButt = document.querySelector(".left-butt-edit");
+const exitButt = document.querySelector(".create-exit-icon");
+const layoutEdit = document.querySelector(".create");
+const saveButt = document.querySelector(".create-butt-save");
+const nameUser = document.querySelector(".left-if-name");
+const emailUser = document.querySelector(".left-email-text");
+const phoneUser = document.querySelector(".left-number-text");
+const jobUser = document.querySelector(".left-position-text");
+const header = document.getElementById("header");
+const siderbar = document.getElementById("sidebar");
+const content = document.querySelector(".content");
+//value the Input
+let nameInput = document.querySelector(".create-form-name-input");
+let emailInput = document.querySelector(".create-form-email-input");
+let jobInput = document.querySelector(".create-form-job-input");
+let phoneInput = document.querySelector(".create-form-phone-input");
+//
+const admin = JSON.parse(localStorage.getItem("admin")) || [];
+const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+nameUser.textContent = currentUser.name;
+emailUser.textContent = currentUser.email;
+jobUser.textContent = currentUser.job;
+phoneUser.textContent = currentUser.phone;
+
+console.log(admin);
+console.log(currentUser);
+// console.log(currentUser);
+let accountUser = admin.find((item) => item.name === currentUser.name);
+console.log(accountUser);
+nameInput.value = accountUser.name;
+emailInput.value = accountUser.email;
+jobInput.value = accountUser.job;
+phoneInput.value = accountUser.phone;
+function editProfile() {
+  let nameInput = document.querySelector(".create-form-name-input").value;
+  let emailInput = document.querySelector(".create-form-email-input").value;
+  let jobInput = document.querySelector(".create-form-job-input").value;
+  let phoneInput = document.querySelector(".create-form-phone-input").value;
+  nameUser.textContent = nameInput;
+  emailUser.textContent = emailInput;
+  jobUser.textContent = jobInput;
+  phoneUser.textContent = phoneInput;
+  layoutEdit.style.display = "none";
+  header.style.opacity = "1";
+  siderbar.style.opacity = "1";
+  content.style.opacity = "1";
+  admin.forEach((item) => {
+    if (item.name === currentUser.name) {
+      item.name = nameInput;
+      item.email = emailInput;
+      item.job = jobInput;
+      item.phone = phoneInput;
+    }
+  });
+  // localStorage.setItem("admin", JSON.stringify(admin));
+  console.log(admin);
+}
+
+editButt.addEventListener("click", () => {
+  layoutEdit.style.display = "block";
+  header.style.opacity = "0.5";
+  siderbar.style.opacity = "0.5";
+  content.style.opacity = "0.5";
+});
+exitButt.addEventListener("click", () => {
+  layoutEdit.style.display = "none";
+  header.style.opacity = "1";
+  siderbar.style.opacity = "1";
+  content.style.opacity = "1";
+});
+saveButt.addEventListener("click", editProfile);

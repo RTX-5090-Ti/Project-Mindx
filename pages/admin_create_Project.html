@@ -29,30 +29,30 @@
           <div class="content-bottom-create">
             <div class="project-title">
               <span>Project Title</span>
-              <input type="text" />
+              <input id="project-title-input" type="text" />
             </div>
             <div class="project-type">
               <span>Project Type</span>
-              <input type="text" />
+              <input id="project-type-input" type="text" />
             </div>
             <div class="project-times">
               <div class="project-time-left">
                 <span>Start Date</span>
                 <div class="projectt-times-start">
-                  <input type="date" />
+                  <input id="project-times-start-input" type="date" />
                 </div>
               </div>
               <div class="project-time-right">
                 <span>End Date</span>
                 <div class="projectt-times-end">
-                  <input type="date" />
+                  <input id="project-times-end-input" type="date" />
                 </div>
               </div>
             </div>
           </div>
           <div class="content-bottom-Description">
             <span>Project Description</span>
-            <textarea name="" id=""></textarea>
+            <textarea name="" id="description-input"></textarea>
           </div>
           <div class="content-bottom-rules">
             <span class="rules-title">Project Roles</span>
@@ -63,14 +63,16 @@
                   <span id="arrow-black">&#9650;</span>
                 </div>
                 <div class="rules-list-box" id="lists">
-                  <div class="rules-list-check">
+                  <!--  -->
+                  <!-- <div class="rules-list-check">
                     <div class="rules-list-item-left">
                       <span class="item-left-name">Yash</span>
                       <span class="item-left-position">Team lead</span>
                     </div>
                     <label for="checkbox1" class="checkbox-label">
                       <input
-                        type="checkbox"
+                        type="radio"
+                        name="yash"
                         id="checkbox1"
                         class="check-input"
                       />
@@ -81,107 +83,21 @@
                         />
                       </div>
                     </label>
-                  </div>
-                  <div class="rules-list-check">
-                    <div class="rules-list-item-left">
-                      <span class="item-left-name">Yash</span>
-                      <span class="item-left-position">Team lead</span>
-                    </div>
-                    <label for="checkbox2" class="checkbox-label">
-                      <input
-                        type="checkbox"
-                        id="checkbox2"
-                        class="check-input"
-                      />
-                      <div class="checkbox">
-                        <img
-                          src="../picture/admin-create-project/Vector3.png"
-                          alt="Vector2"
-                        />
-                      </div>
-                    </label>
-                  </div>
-                  <div class="rules-list-check">
-                    <div class="rules-list-item-left">
-                      <span class="item-left-name">Yash</span>
-                      <span class="item-left-position">Team lead</span>
-                    </div>
-                    <label for="checkbox3" class="checkbox-label">
-                      <input
-                        type="checkbox"
-                        id="checkbox3"
-                        class="check-input"
-                      />
-                      <div class="checkbox">
-                        <img
-                          src="../picture/admin-create-project/Vector3.png"
-                          alt="Vector2"
-                        />
-                      </div>
-                    </label>
-                  </div>
-                  <div class="rules-list-check">
-                    <div class="rules-list-item-left">
-                      <span class="item-left-name">Yash</span>
-                      <span class="item-left-position">Team lead</span>
-                    </div>
-                    <label for="checkbox4" class="checkbox-label">
-                      <input
-                        type="checkbox"
-                        id="checkbox4"
-                        class="check-input"
-                      />
-                      <div class="checkbox">
-                        <img
-                          src="../picture/admin-create-project/Vector3.png"
-                          alt="Vector2"
-                        />
-                      </div>
-                    </label>
-                  </div>
-                  <div class="rules-list-check">
-                    <div class="rules-list-item-left">
-                      <span class="item-left-name">Yash</span>
-                      <span class="item-left-position">Team lead</span>
-                    </div>
-                    <label for="checkbox5" class="checkbox-label">
-                      <input
-                        type="checkbox"
-                        id="checkbox5"
-                        class="check-input"
-                      />
-                      <div class="checkbox">
-                        <img
-                          src="../picture/admin-create-project/Vector3.png"
-                          alt="Vector2"
-                        />
-                      </div>
-                    </label>
-                  </div>
-                  <div class="rules-list-check">
-                    <div class="rules-list-item-left">
-                      <span class="item-left-name">Yash</span>
-                      <span class="item-left-position">Team lead</span>
-                    </div>
-                    <label for="checkbox6" class="checkbox-label">
-                      <input
-                        type="checkbox"
-                        id="checkbox6"
-                        class="check-input"
-                      />
-                      <div class="checkbox">
-                        <img
-                          src="../picture/admin-create-project/Vector3.png"
-                          alt="Vector2"
-                        />
-                      </div>
-                    </label>
-                  </div>
+                  </div> -->
+                  <!--  -->
                 </div>
               </div>
               <div class="rules-butt">
-                <button class="rules-butt-create">Create</button>
-                <button class="rules-butt-delete">Delete</button>
+                <a
+                  href="../pages/admin_all_project.html"
+                  class="rules-butt-create"
+                  >Create</a
+                >
+                <a
+                  href="../pages/admin_all_project.html"
+                  class="rules-butt-delete"
+                  >Cancle</a
+                >
               </div>
             </div>
           </div>
@@ -196,5 +112,22 @@
       loadComponent("sidebar", "../components/sidebar-admin.html");
     </script>
     <script src="../js/admin_create_project.js"></script>
+    <script>
+      // Hàm gán tên
+      function setHeaderUserName() {
+        const me = JSON.parse(localStorage.getItem("currentUser") || "{}");
+        const el = document.querySelector("#header .account-if-name");
+        if (el) el.textContent = me.name || "User";
+      }
+
+      (async () => {
+        await Promise.all([
+          loadComponent("header", "../components/header.html"),
+          loadComponent("sidebar", "../components/sidebar-admin.html"),
+        ]);
+        // Lúc này header/sidebar đã vào DOM
+        setHeaderUserName();
+      })();
+    </script>
   </body>
 </html>
