@@ -132,6 +132,7 @@ function infInput(event) {
       end: endDate,
       desProject: description,
       lead: nameLead,
+      status: "On progress",
     };
     listProject.push(objProject);
     console.log(listProject);

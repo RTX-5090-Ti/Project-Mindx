@@ -1,3 +1,31 @@
+let listProject = JSON.parse(localStorage.getItem("listProject")) || [];
+let num = listProject.length;
+let percent = 100 / num;
+// console.log(percent);
+let completed = 0;
+let onProgress = 0;
+let onHold = 0;
+let pending = 0;
+console.log(listProject);
+console.log(num);
+listProject.forEach((item) => {
+  if (item.status === "On progress") {
+    onProgress++;
+  } else if (item.status === "On hold") {
+    onHold++;
+  } else if (item.status === "Completed") {
+    completed++;
+  } else {
+    pending++;
+  }
+});
+console.log(completed, onProgress, onHold, pending);
+let percentCompleted = Math.round(completed * percent);
+let percentOnProgress = Math.round(onProgress * percent);
+let percentOnHold = Math.round(onHold * percent);
+let percentPending = Math.round(pending * percent);
+console.log(percentCompleted, percentOnProgress, percentOnHold, percentPending);
+
 // Vẽ biểu đồ chart 1
 const ctx = document.getElementById("tasksChart").getContext("2d");
 const tasksChart = new Chart(ctx, {
@@ -6,8 +34,14 @@ const tasksChart = new Chart(ctx, {
     labels: ["Completed", "On Hold", "On Progress", "Pending"],
     datasets: [
       {
-        data: [32, 25, 25, 18],
+        data: [
+          percentCompleted,
+          percentOnHold,
+          percentOnProgress,
+          percentPending,
+        ],
         backgroundColor: ["#2B8A99", "#625BDF", "#33C3F0", "#E53935"],
+        //complete, on-hold, on-progress, pending
         borderWidth: 1,
       },
     ],
@@ -51,7 +85,7 @@ gradientBlue.addColorStop(1, "rgba(54, 162, 235, 0)");
 const lineChart = new Chart(ctxxx, {
   type: "line",
   data: {
-    labels: ["Oct 2021", "Nov 2021", "Dec 2021", "Jan 2022", "Feb 2022"],
+    labels: ["Apr 2025", "May 2025", "Jun 2025", "Jul 2025", "Aug 2025"],
     datasets: [
       {
         label: "Achieved",

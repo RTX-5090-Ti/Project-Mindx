@@ -21,10 +21,33 @@ listProject.forEach((item) => {
                 </a>
               </div>
               <div class="list-title-right">
-                <span>Offtrack</span>
+                <span>Ontrack</span>
               </div>
             </div>
             <!--  -->
+            <div class="status-chart">
+              <div class="status-chart-box">
+                <span class="status-project">${item.status}</span>
+                <span class="butt-icon" id="arrow-black">&#9650;</span>
+                <div class="status-chart-choice">
+                  <span class="choice status-chart-choice-complete"
+                    >Completed</span
+                  >
+                  <span class="choice status-chart-choice-progress"
+                    >On progress</span
+                  >
+                  <span class="choice status-chart-choice-hold">On hold</span>
+                  <span class="choice status-chart-choice-peding">Pending</span>
+                </div>
+              </div>
+              <div class="status-chart-icon">
+                <img
+                  class="status-icon"
+                  src="../picture/favicon/on-progress.gif"
+                  alt=""
+                />
+              </div>
+            </div>
             <a href="../pages/admin_Task.html" class="list-title-box">
               <div class="list-paragraph">
                 <p>
@@ -53,6 +76,7 @@ listProject.forEach((item) => {
                   </div>
                 </div>
               </div>
+
             </a>
           </div>
     `;
@@ -142,3 +166,115 @@ projectItem.forEach((item) => {
     localStorage.setItem("projectAssign", JSON.stringify(projectAssign));
   });
 });
+// trạng thái status
+
+const listProjectItem = document.querySelectorAll(".content-bottom-list");
+console.log(listProjectItem);
+listProjectItem.forEach((item) => {
+  const buttArrow = item.querySelector(".butt-icon");
+  const listChoice = item.querySelector(".status-chart-choice");
+  const statusProject = item.querySelector(".status-project");
+  const backgroundStatus = item.querySelector(".status-chart-box");
+  const iconLoading = item.querySelector(".status-icon");
+  const choices = item.querySelectorAll(".choice"); // 👈 lấy choice trong từng item thôi
+  let statusNow = item.querySelector(".status-project").textContent.trim();
+  // console.log(statusNow);
+
+  if (statusNow === "Completed") {
+    statusProject.style.color = "#238799";
+    backgroundStatus.style.backgroundColor = "#d2eef2";
+    iconLoading.src = "../picture/favicon/completed.gif";
+  } else if (statusNow === "On progress") {
+    statusProject.style.color = "#38b4f2";
+    backgroundStatus.style.backgroundColor = "#d6effc";
+    iconLoading.src = "../picture/favicon/on-progress.gif";
+  } else if (statusNow === "On hold") {
+    statusProject.style.color = "#625ed6";
+    backgroundStatus.style.backgroundColor = "#e4e3fa";
+    iconLoading.src = "../picture/favicon/on-hold.gif";
+  } else {
+    statusProject.style.color = "#d42c20";
+    backgroundStatus.style.backgroundColor = "#f9dbd9";
+    iconLoading.src = "../picture/favicon/pending.gif";
+  }
+  // Toggle list riêng cho item này
+  buttArrow.addEventListener("click", () => {
+    listChoice.classList.toggle("show");
+  });
+
+  // Xử lý click choice riêng cho item này
+  choices.forEach((icon) => {
+    icon.addEventListener("click", () => {
+      const text = icon.textContent.trim();
+      statusProject.textContent = text;
+      listChoice.classList.remove("show");
+      // Cập nhật localStorage ngay tại đây
+      let titleProject = item
+        .querySelector(".list-title-left-name")
+        .textContent.trim();
+      let project = listProject.find((p) => p.title.trim() === titleProject);
+      if (project) {
+        project.status = text;
+        localStorage.setItem("listProject", JSON.stringify(listProject));
+      }
+
+      if (text === "Completed") {
+        statusProject.style.color = "#238799";
+        backgroundStatus.style.backgroundColor = "#d2eef2";
+        iconLoading.src = "../picture/favicon/completed.gif";
+      } else if (text === "On progress") {
+        statusProject.style.color = "#38b4f2";
+        backgroundStatus.style.backgroundColor = "#d6effc";
+        iconLoading.src = "../picture/favicon/on-progress.gif";
+      } else if (text === "On hold") {
+        statusProject.style.color = "#625ed6";
+        backgroundStatus.style.backgroundColor = "#e4e3fa";
+        iconLoading.src = "../picture/favicon/on-hold.gif";
+      } else {
+        statusProject.style.color = "#d42c20";
+        backgroundStatus.style.backgroundColor = "#f9dbd9";
+        iconLoading.src = "../picture/favicon/pending.gif";
+      }
+    });
+  });
+});
+//
+// const buttText = document.querySelector(".two-fc");
+// buttText.addEventListener("click", () => {
+//   console.log("hello");
+//   listProject.forEach((icon) => {
+//     listProjectItem.forEach((item) => {
+//       let titleProject = item
+//         .querySelector(".list-title-left-name")
+//         .textContent.trim();
+//       let statusProject = item
+//         .querySelector(".status-project")
+//         .textContent.trim();
+
+//       if (icon.title.trim() === titleProject) {
+//         icon.status = statusProject;
+//       }
+//     });
+//   });
+//   console.log(listProject);
+// });
+//
+// listProject.forEach((icon) => {
+//   listProjectItem.forEach((item) => {
+//     let titleProject = item
+//       .querySelector(".list-title-left-name")
+//       .textContent.trim();
+//     let statusProject = item
+//       .querySelector(".status-project")
+//       .textContent.trim();
+//     // console.log(statusProject);
+//     // let status = item.querySelector(".status-project");
+//     // console.log(status.textContent);
+//     if (icon.title.trim() === titleProject) {
+//       icon.status = statusProject;
+//       // console.log(statusProject);
+//       // console.log(icon.status);
+//     }
+//   });
+// });
+// localStorage.setItem("listProject", JSON.stringify(listProject));

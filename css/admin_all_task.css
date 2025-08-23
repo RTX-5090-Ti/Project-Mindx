@@ -6,3 +6,27 @@
   color: var(--text-cl);
   margin-bottom: 40px;
 }
+.loading-low {
+  padding: 5px 30px;
+  color: var(--loading-low-cl);
+  background-color: var(--loading-low-br);
+  border-radius: 22px;
+  font-size: var(--font-s12);
+  font-weight: var(--font-w4);
+}
+.loading-medium {
+  padding: 5px 20px;
+  color: var(--complete-cl);
+  background-color: var(--complete-br-cl);
+  border-radius: 22px;
+  font-size: var(--font-s12);
+  font-weight: var(--font-w4);
+}
+.loading-high {
+  padding: 5px 30px;
+  color: var(--cancael-cl);
+  background-color: var(--cancel-br-cl);
+  border-radius: 22px;
+  font-size: var(--font-s12);
+  font-weight: var(--font-w4);
+}

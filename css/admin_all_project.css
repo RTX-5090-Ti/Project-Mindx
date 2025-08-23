@@ -61,7 +61,7 @@
 .list-title {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 44px;
+  margin-bottom: 35px;
   align-items: center;
   position: relative;
 }
@@ -96,7 +96,7 @@
   display: inline-block;
   padding: 10px 18px;
   border-radius: 4px;
-  background-color: var(--offtrack-br-cl);
+  background-color: #e6f2eb;
 }
 .list-title-box {
   text-decoration: none;
@@ -116,8 +116,90 @@
   display: inline-block;
   font-size: var(--font-s12);
   font-weight: var(--font-w5);
-  color: var(--offtrack-cl);
+  color: #21bd1e;
 }
+/* Style cho phần  status-chart */
+.status-chart {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 20px;
+
+  /* justify-content: end; */
+}
+.status-icon {
+  width: 40px;
+}
+.status-chart-box {
+  background-color: #21bd1e;
+  display: inline-block;
+  padding: 5px 5px 5px 20px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background-color: #d6effd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  position: relative;
+}
+.status-chart-choice {
+  position: absolute;
+  top: 120%;
+  background-color: var(--br-cl-content);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  display: none;
+  /* overflow: hidden; */
+}
+.show {
+  display: block;
+}
+.hidden {
+  display: none;
+}
+/* .status-chart-choice::before {
+  content: "";
+  background-color: transparent;
+  background-color: red;
+  height: 15px;
+  width: 100%;
+  position: absolute;
+  top: -20px;
+} */
+.status-chart-choice span {
+  display: inline-block;
+  width: 100%;
+  padding: 5px 10px;
+  text-wrap: nowrap;
+  cursor: pointer;
+}
+.status-chart-choice span:first-child {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+.status-chart-choice span:last-child {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+.status-chart-choice span:hover {
+  background-color: rgb(171, 175, 177, 0.4);
+}
+.butt-icon {
+  display: inline-block;
+  transform: rotate(180deg);
+  cursor: pointer;
+}
+/* .butt-icon:hover + .status-chart-choice {
+  display: block;
+} */
+.status-project {
+  font-size: var(--font-s15);
+  font-weight: var(--font-w4);
+  font-family: var(--font-nunito);
+  color: #38b4f2;
+}
+/* <--   end  -->*/
 .list-paragraph {
   margin-bottom: 47px;
 }

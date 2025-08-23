@@ -131,8 +131,8 @@ let emailInput = document.querySelector(".create-form-email-input");
 let jobInput = document.querySelector(".create-form-job-input");
 let phoneInput = document.querySelector(".create-form-phone-input");
 //
-const admin = JSON.parse(localStorage.getItem("admin")) || [];
-const currentUser = JSON.parse(localStorage.getItem("currentUser"));
+let admin = JSON.parse(localStorage.getItem("admin")) || [];
+let currentUser = JSON.parse(localStorage.getItem("currentUser")) || [];
 nameUser.textContent = currentUser.name;
 emailUser.textContent = currentUser.email;
 jobUser.textContent = currentUser.job;
@@ -141,7 +141,9 @@ phoneUser.textContent = currentUser.phone;
 console.log(admin);
 console.log(currentUser);
 // console.log(currentUser);
-let accountUser = admin.find((item) => item.name === currentUser.name);
+let accountUser = admin.find(
+  (item) => item.name.trim() === currentUser.name.trim()
+);
 console.log(accountUser);
 nameInput.value = accountUser.name;
 emailInput.value = accountUser.email;

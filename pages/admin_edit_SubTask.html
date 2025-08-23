@@ -13,13 +13,13 @@
     <title>Management System</title>
   </head>
   <body>
-    <div id="header-user"></div>
+    <div id="header"></div>
     <div class="container">
-      <div id="siderbar"></div>
+      <div id="sidebar"></div>
       <div class="content">
         <div class="content">
           <div class="content-top">
-            <span>SubTasks / Create SubTasks</span>
+            <span>SubTasks / Edit SubTasks</span>
           </div>
           <div class="content-bottom">
             <div class="content-bottom-create">
@@ -49,7 +49,7 @@
             <div class="content-bottom-Description">
               <span>SubTask Description</span>
               <textarea
-                class="content-bottom-Description-input"
+                class="projectt-times-area-input"
                 name=""
                 id=""
               ></textarea>
@@ -92,13 +92,13 @@
                 <button class="object-button-add">Add Attachment</button>
                 <div class="object-button-initialize">
                   <a
-                    href="./user_SubTask.html"
+                    href="./admin_subTask.html"
                     class="object-button-initialize-create"
                   >
-                    Create
+                    Save
                   </a>
                   <a
-                    href="./user_SubTask.html"
+                    href="./admin_subTask.html"
                     class="object-button-initialize-delete"
                   >
                     Cancel
@@ -114,22 +114,22 @@
     <!-- Phần code Js để  render trang -->
     <script src="../js/components.js"></script>
     <script>
-      loadComponent("header-user", "../components/header_user.html");
-      loadComponent("siderbar", "../components/sidebar_user.html");
+      loadComponent("header", "../components/header.html");
+      loadComponent("sidebar", "../components/sidebar-admin.html");
     </script>
-    <script src="../js/user_add_SubTasks.js"></script>
+    <script src="../js/admin_edit_subTask.js"></script>
     <script>
       // Hàm gán tên
       function setHeaderUserName() {
         const me = JSON.parse(localStorage.getItem("currentUser") || "{}");
-        const el = document.querySelector("#header-user .account-if-name");
+        const el = document.querySelector("#header .account-if-name");
         if (el) el.textContent = me.name || "User";
       }
 
       (async () => {
         await Promise.all([
-          loadComponent("header-user", "../components/header_user.html"),
-          loadComponent("siderbar", "../components/sidebar_user.html"),
+          loadComponent("header", "../components/header.html"),
+          loadComponent("sidebar", "../components/sidebar-admin.html"),
         ]);
         // Lúc này header/sidebar đã vào DOM
         setHeaderUserName();

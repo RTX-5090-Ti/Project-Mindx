@@ -1,35 +1,17 @@
-const desTask = document.querySelector(".des-task");
-const keyAndDay = document.querySelector(".status-task");
+const taskDesText = document.querySelector(".des-task");
+const taskDesTitle = document.querySelector(".content-title-task");
+const statusTask = document.querySelector(".status-task");
 const priotyTask = document.querySelector(".status-prioty");
 const deadlineTask = document.querySelector(".main-right-time-deadline");
-const titleTask = document.querySelector(".content-title-task");
-// Lôi task assign về để render ra thông tin
-let taskItemAss = JSON.parse(localStorage.getItem("taskItemAss")) || [];
-console.log(taskItemAss);
-desTask.textContent = taskItemAss.taskDes;
-titleTask.textContent = `Task / ${taskItemAss.taskTitle}`;
-keyAndDay.innerHTML = `#${taskItemAss.key} Opened ${taskItemAss.dayRemaining} days ago by <span class="main-left-status-text-solid">Yash Ghori</span>`;
-priotyTask.textContent = taskItemAss.prioty;
-deadlineTask.textContent = taskItemAss.timeRemaining;
-if (priotyTask.textContent === "High") {
-  priotyTask.classList.add("loading-high");
-} else if (priotyTask.textContent === "Medium") {
-  priotyTask.classList.add("loading-medium");
-} else {
-  priotyTask.classList.add("loading-low");
-}
-// console.log(priotyTask.textContent);\
-// Phần côde js cho trang
-let listTaskToAdd = JSON.parse(localStorage.getItem("listTaskToAdd")) || [];
-console.log(listTaskToAdd);
-let listSubTask = listTaskToAdd.filter(
-  (item) =>
-    item.id === taskItemAss.taskTitle && item.taskDes === taskItemAss.taskDes
-);
-// console.log(listSubTask);
-
-// Lấy ngày chêcnh lệch
-// Hàm tính task đã đuuợc tạo bao nhiêu ngày
+const listSubTask = document.querySelector(".content-list-sub");
+//
+let taskDesShowAdmin =
+  JSON.parse(localStorage.getItem("taskDesShowAdmin")) || [];
+let allStask = JSON.parse(localStorage.getItem("allStask")) || [];
+let listTaskToAdd = JSON.parse(localStorage.getItem("listTaskToAdd"));
+// console.log(taskDesShowAdmin);
+// console.log(listTaskToAdd);
+//
 function daysDiffFromNow(dateB) {
   // Lấy ngày hiện tại (yyyy-mm-dd)
   const today = new Date();
@@ -48,7 +30,7 @@ function daysDiffFromNow(dateB) {
 
   return `${diffDays + 1}`;
 }
-// Hàm tính thời gian còn lại
+// Hàm  tính còn bao nhiều ngày kêtts thúc
 function diffFromNow(dateInput) {
   // parse yyyy-mm-dd -> Date (local)
   const [y, m, d] = dateInput.split("-").map(Number);
@@ -72,30 +54,55 @@ function diffFromNow(dateInput) {
 
   return `${days}D : ${weeks}W : ${months}M`;
 }
-// render subTask
-const listSubTaskRender = document.querySelector(".content-list-sub");
-listSubTask[0].subTask.forEach((item) => {
-  listSubTaskRender.innerHTML += `
-    <div class="content-list-main list-sub-item">
+//
+allStask.forEach((item) => {
+  if (item.taskDes.trim() === taskDesShowAdmin) {
+    // console.log(item);
+    taskDesText.textContent = item.taskDes;
+    taskDesTitle.textContent = `Task / ${item.taskDes}`;
+    statusTask.innerHTML = `#${item.key} Opened ${daysDiffFromNow(
+      item.taskStart
+    )} days ago by
+                    <span class="main-left-status-text-solid">Yash Ghori</span>`;
+    priotyTask.textContent = item.prioty;
+    if (item.prioty.trim() === "Low") {
+      priotyTask.classList.add("loading-low");
+    } else if (item.prioty.trim() === "Medium") {
+      priotyTask.classList.add("loading-medium");
+    } else {
+      priotyTask.classList.add("loading-high");
+    }
+    deadlineTask.textContent = diffFromNow(item.taskEnd);
+  }
+  //   console.log(item.prioty);
+});
+// rrender cac subTask
+listTaskToAdd.forEach((item) => {
+  if (item.taskDes.trim() === taskDesShowAdmin.trim()) {
+    // console.log(item);
+    item.subTask.forEach((icon) => {
+      listSubTask.innerHTML += `
+            <div class="content-list-main list-sub-item">
               <div class="main-left">
                 <div class="main-leftf-img">
                   <img src="../picture/admin-subtask/Idea.png" alt="Idea" />
                 </div>
                 <div class="main-left-content">
                   <p class="main-left-content-text">
-                    ${item.subDes}
+                    ${icon.subDes}
                   </p>
                   <div class="main-left-status">
                     <p class="main-left-status-text">
-                      #${listSubTask[0].key} Opened ${daysDiffFromNow(
-    item.subStart
-  )} days ago by
+                      #${item.key} Opened ${daysDiffFromNow(
+        icon.subStart
+      )} days ago by
                       <span class="main-left-status-text-solid"
-                        >${listSubTask[0].nameAss}</span
+                        >${item.nameAss}</span
                       >
                     </p>
                     <div class="status-load">
                       <span class="status-load-complete">In-progress</span>
+                      
                     </div>
                   </div>
                 </div>
@@ -106,7 +113,7 @@ listSubTask[0].subTask.forEach((item) => {
                     src="../picture/admin-subtask/material-symbols_clock-loader-10.png"
                     alt="material-symbols_clock-loader-10"
                   />
-                  <span>${diffFromNow(item.subEnd)}</span>
+                  <span>${diffFromNow(icon.subEnd)}</span>
                 </div>
                 <div class="main-right-img">
                   <img
@@ -114,6 +121,7 @@ listSubTask[0].subTask.forEach((item) => {
                     alt="Group"
                   />
                 </div>
+                <!--  -->
                 <div class="main-right-comment main-right-butt">
                   <div class="box-comment">
                     <img
@@ -134,13 +142,19 @@ listSubTask[0].subTask.forEach((item) => {
                     </div>
                   </div>
                 </div>
+                <!--  -->
               </div>
             </div>
-  `;
+        `;
+    });
+  }
 });
 // Phần edit vs delete
+
 const listItemSubTask = document.querySelectorAll(".list-sub-item");
+console.log(taskDesShowAdmin);
 console.log(listItemSubTask);
+console.log(listTaskToAdd);
 listItemSubTask.forEach((item) => {
   let deleteButt = item.querySelector(".layout-butt-delete");
   let editButt = item.querySelector(".layout-butt-edit");
@@ -149,18 +163,20 @@ listItemSubTask.forEach((item) => {
   deleteButt.addEventListener("click", (e) => {
     // e.preventDefault();
     // console.log(item);
-    let taskDesItem = item
+    let DesOfSubtask = item
       .querySelector(".main-left-content-text")
       .textContent.trim();
-    console.log(taskDesItem);
+
+    console.log(DesOfSubtask);
     listTaskToAdd.forEach((icon) => {
-      // console.log(icon);
-      if (icon.taskDes.trim() === taskItemAss.taskDes.trim()) {
+      if (icon.taskDes.trim() === taskDesShowAdmin.trim()) {
+        console.log(icon);
         icon.subTask = icon.subTask.filter(
-          (ibon) => ibon.subDes.trim() !== taskDesItem
+          (ibon) => ibon.subDes !== DesOfSubtask
         );
       }
     });
+
     localStorage.setItem("listTaskToAdd", JSON.stringify(listTaskToAdd));
     console.log(listTaskToAdd);
     alert("Xoá SubTask thành công");
@@ -170,14 +186,14 @@ listItemSubTask.forEach((item) => {
     let taskDesItem = item
       .querySelector(".main-left-content-text")
       .textContent.trim();
-    // console.log(taskDesItem);
-    let subTaskEdit = {
-      id: taskItemAss.taskTitle,
-      taskDes: taskDesItem,
+    let desSubTaskEdit = {
+      desTask: taskDesShowAdmin,
+      desSubTask: taskDesItem,
     };
+    console.log(desSubTaskEdit);
 
-    localStorage.setItem("subTaskEdit", JSON.stringify(subTaskEdit));
-    window.location.href = "../pages/user_edit_SubTask.html";
-    console.log(subTaskEdit);
+    localStorage.setItem("desSubTaskEdit", JSON.stringify(desSubTaskEdit));
+    window.location.href = "../pages/admin_edit_SubTask.html";
+    // console.log(subTaskEdit);
   });
 });

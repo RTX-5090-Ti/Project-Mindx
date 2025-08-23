@@ -64,7 +64,7 @@ const adminAcount = [
     password: "123456",
     role: "admin",
     phone: "7048144030",
-    job: "UI - Intern",
+    job: "Project-Manager",
   },
   {
     name: "Ven KenShin",

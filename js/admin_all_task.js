@@ -1,7 +1,7 @@
 const listTask = document.querySelector(".content-lists");
 let allTask = JSON.parse(localStorage.getItem("allProject")) || [];
 let currentUser = JSON.parse(localStorage.getItem("currentUser")) || [];
-console.log(allTask);
+// console.log(allTask);
 let tasks = [];
 //  Lấy tất cả các task  trong Project
 allTask.forEach((item) => {
@@ -70,10 +70,10 @@ function diffFromNow(dateInput) {
   return `${days}D : ${weeks}W : ${months}M`;
 }
 let allTaskOfProject = attachKeys(tasks);
-console.log(allTaskOfProject);
+// console.log(allTaskOfProject);
 allTaskOfProject.forEach((item) => {
   listTask.innerHTML += `
-         <a href="#" class="content-lists-item">
+         <a href="./admin_subTask.html" class="content-lists-item">
             <div class="content-lists-item-left">
               <div class="item-img">
                 <img src="../picture/admin-task/Idea.png" alt="Idea" />
@@ -92,7 +92,7 @@ allTaskOfProject.forEach((item) => {
                   <div class="item-title-load-status">
                     <span class="status-cancel">Canceled</span>
                     <span class="status-complete">in-progress</span>
-                    <span class="status-pending">Pending</span>
+                    <span class="status-pending">${item.prioty}</span>
                   </div>
                 </div>
               </div>
@@ -110,4 +110,35 @@ allTaskOfProject.forEach((item) => {
             </div>
           </a>
     `;
+
+  // if (item.prioty === "Low") {
+  //   statusItem.classList.add("loading-low");
+  // } else if (item.prioty === "Medium") {
+  //   statusItem.classList.add("loading-medium");
+  // } else {
+  //   statusItem.classList.add("loading-high");
+  // }
+});
+let statusListItem = listTask.querySelectorAll(".status-pending");
+statusListItem.forEach((item) => {
+  if (item.textContent.trim() === "Low") {
+    item.classList.add("loading-low");
+  } else if (item.textContent.trim() === "Medium") {
+    item.classList.add("loading-medium");
+  } else {
+    item.classList.add("loading-high");
+  }
+});
+const listTaskOfAdim = document.querySelectorAll(".content-lists-item");
+console.log(listTaskOfAdim);
+listTaskOfAdim.forEach((item) => {
+  item.addEventListener("click", (e) => {
+    // e.preventDefault();
+    let taskDesShowAdmin = item
+      .querySelector(".item-title-p")
+      .textContent.trim();
+
+    console.log(taskDesShowAdmin);
+    localStorage.setItem("taskDesShowAdmin", JSON.stringify(taskDesShowAdmin));
+  });
 });

@@ -142,7 +142,7 @@ taskOfProject.task.forEach((item) => {
                   <div class="item-title-load-status">
                     <span class="status-cancel">Canceled</span>
                     <span class="status-complete">in-progress</span>
-                    <span class="status-pending">Pending</span>
+                    <span class="status-prioty">${item.prioty}</span>
                   </div>
                 </div>
               </div>
@@ -178,6 +178,20 @@ taskOfProject.task.forEach((item) => {
             </div>
     `;
 });
+//
+let priotyListTask = document.querySelectorAll(".status-prioty");
+priotyListTask.forEach((item) => {
+  if (item.textContent === "Low") {
+    item.classList.add("loading-low");
+  } else if (item.textContent === "Medium") {
+    item.classList.add("loading-medium");
+  } else {
+    item.classList.add("loading-high");
+  }
+  // console.log(item.textContent);
+});
+// console.log(priotyTask);
+// console.log(item);
 
 const allItem = document.querySelectorAll(".content-lists-item");
 // console.log(allItem);
